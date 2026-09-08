@@ -1,0 +1,19 @@
+[package]
+name = "notion-testkit"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+name = "notion_testkit"
+path = "src/lib.rs"
+
+[[bin]]
+name = "notion-verify"
+path = "src/main.rs"
+
+[dependencies]
+notion-core = { path = "../notion-core" }
+async-trait.workspace = true
+tokio = { workspace = true }
+serde_json.workspace = true

@@ -1,0 +1,364 @@
+{
+  "generated_at": "2026-08-27T04:52:58.927004+00:00",
+  "classification_note": "Direct routes are AI-specific by name and live trace role; support routes were concurrent retrieval warmups; correlated routes are generic calls observed in the AI flows.",
+  "endpoints": [
+    {
+      "scheme": "https",
+      "host": "app.notion.com",
+      "path": "/api/v3/etClient",
+      "method": "POST",
+      "ai_relevance": "correlated",
+      "role": "client_telemetry",
+      "notion_api_v3": true,
+      "count": 43,
+      "capture_counts": {
+        "ai-probe-auto.har": 2,
+        "ai-probe-gpt56-sol-medium.har": 4,
+        "ai-probe-gpt56-sol-no-thinking.har": 5,
+        "ai-session-settled-full.har": 16,
+        "notion-live-session-2026-08-27.har": 16
+      },
+      "statuses": {
+        "0": 2,
+        "200": 41
+      },
+      "mime_types": {
+        "application/json; charset=utf-8": 41
+      },
+      "query_parameter_names": [],
+      "average_har_time_ms": 301.605,
+      "min_har_time_ms": 0.0,
+      "max_har_time_ms": 1057.0,
+      "total_response_body_bytes": 60669
+    },
+    {
+      "scheme": "https",
+      "host": "app.notion.com",
+      "path": "/api/v3/getAIUsageEligibilityV2",
+      "method": "POST",
+      "ai_relevance": "direct",
+      "role": "usage_eligibility",
+      "notion_api_v3": true,
+      "count": 5,
+      "capture_counts": {
+        "ai-probe-gpt56-sol-medium.har": 1,
+        "ai-probe-gpt56-sol-no-thinking.har": 1,
+        "ai-session-settled-full.har": 1,
+        "notion-live-session-2026-08-27.har": 2
+      },
+      "statuses": {
+        "0": 1,
+        "200": 4
+      },
+      "mime_types": {
+        "application/json; charset=utf-8": 4
+      },
+      "query_parameter_names": [],
+      "average_har_time_ms": 435.6,
+      "min_har_time_ms": 145.0,
+      "max_har_time_ms": 789.0,
+      "total_response_body_bytes": 4964
+    },
+    {
+      "scheme": "https",
+      "host": "app.notion.com",
+      "path": "/api/v3/getAssetsJsonV2",
+      "method": "POST",
+      "ai_relevance": "correlated",
+      "role": "generic_asset_metadata",
+      "notion_api_v3": true,
+      "count": 62,
+      "capture_counts": {
+        "ai-probe-gpt56-sol-medium.har": 1,
+        "ai-probe-gpt56-sol-no-thinking.har": 1,
+        "ai-session-settled-full.har": 27,
+        "notion-live-session-2026-08-27.har": 33
+      },
+      "statuses": {
+        "0": 1,
+        "200": 61
+      },
+      "mime_types": {
+        "application/json; charset=utf-8": 61
+      },
+      "query_parameter_names": [],
+      "average_har_time_ms": 307.129,
+      "min_har_time_ms": 0.0,
+      "max_har_time_ms": 1915.0,
+      "total_response_body_bytes": 305175
+    },
+    {
+      "scheme": "https",
+      "host": "app.notion.com",
+      "path": "/api/v3/getAvailableModels",
+      "method": "POST",
+      "ai_relevance": "direct",
+      "role": "model_roster",
+      "notion_api_v3": true,
+      "count": 9,
+      "capture_counts": {
+        "ai-probe-auto.har": 1,
+        "ai-probe-gpt56-sol-medium.har": 1,
+        "ai-probe-gpt56-sol-no-thinking.har": 1,
+        "ai-session-settled-full.har": 1,
+        "notion-live-session-2026-08-27.har": 5
+      },
+      "statuses": {
+        "0": 1,
+        "200": 8
+      },
+      "mime_types": {
+        "application/json; charset=utf-8": 8
+      },
+      "query_parameter_names": [],
+      "average_har_time_ms": 185.444,
+      "min_har_time_ms": 0.0,
+      "max_har_time_ms": 246.0,
+      "total_response_body_bytes": 23522
+    },
+    {
+      "scheme": "https",
+      "host": "app.notion.com",
+      "path": "/api/v3/getCreditRateLimitStatus",
+      "method": "POST",
+      "ai_relevance": "direct",
+      "role": "credit_rate_limit",
+      "notion_api_v3": true,
+      "count": 4,
+      "capture_counts": {
+        "ai-probe-gpt56-sol-medium.har": 1,
+        "ai-probe-gpt56-sol-no-thinking.har": 1,
+        "ai-session-settled-full.har": 1,
+        "notion-live-session-2026-08-27.har": 1
+      },
+      "statuses": {
+        "200": 4
+      },
+      "mime_types": {
+        "application/json; charset=utf-8": 4
+      },
+      "query_parameter_names": [],
+      "average_har_time_ms": 212.75,
+      "min_har_time_ms": 129.0,
+      "max_har_time_ms": 436.0,
+      "total_response_body_bytes": 3328
+    },
+    {
+      "scheme": "https",
+      "host": "app.notion.com",
+      "path": "/api/v3/getInferenceTranscriptsUnreadCount",
+      "method": "POST",
+      "ai_relevance": "direct",
+      "role": "transcript_lifecycle",
+      "notion_api_v3": true,
+      "count": 19,
+      "capture_counts": {
+        "ai-probe-auto.har": 2,
+        "ai-probe-gpt56-sol-medium.har": 2,
+        "ai-probe-gpt56-sol-no-thinking.har": 3,
+        "ai-session-settled-full.har": 3,
+        "notion-live-session-2026-08-27.har": 9
+      },
+      "statuses": {
+        "0": 1,
+        "200": 18
+      },
+      "mime_types": {
+        "application/json; charset=utf-8": 18
+      },
+      "query_parameter_names": [],
+      "average_har_time_ms": 164.895,
+      "min_har_time_ms": 0.0,
+      "max_har_time_ms": 330.0,
+      "total_response_body_bytes": 18308
+    },
+    {
+      "scheme": "https",
+      "host": "app.notion.com",
+      "path": "/api/v3/markInferenceTranscriptSeen",
+      "method": "POST",
+      "ai_relevance": "direct",
+      "role": "transcript_lifecycle",
+      "notion_api_v3": true,
+      "count": 9,
+      "capture_counts": {
+        "ai-probe-auto.har": 2,
+        "ai-probe-gpt56-sol-medium.har": 1,
+        "ai-probe-gpt56-sol-no-thinking.har": 2,
+        "ai-session-settled-full.har": 1,
+        "notion-live-session-2026-08-27.har": 3
+      },
+      "statuses": {
+        "0": 1,
+        "200": 8
+      },
+      "mime_types": {
+        "application/json; charset=utf-8": 8
+      },
+      "query_parameter_names": [],
+      "average_har_time_ms": 171.778,
+      "min_har_time_ms": 0.0,
+      "max_har_time_ms": 300.0,
+      "total_response_body_bytes": 9926
+    },
+    {
+      "scheme": "https",
+      "host": "app.notion.com",
+      "path": "/api/v3/runInferenceTranscript",
+      "method": "POST",
+      "ai_relevance": "direct",
+      "role": "core_inference_stream",
+      "notion_api_v3": true,
+      "count": 7,
+      "capture_counts": {
+        "ai-probe-auto.har": 1,
+        "ai-probe-gpt56-sol-medium.har": 1,
+        "ai-probe-gpt56-sol-no-thinking.har": 1,
+        "ai-session-settled-full.har": 1,
+        "notion-live-session-2026-08-27.har": 3
+      },
+      "statuses": {
+        "200": 7
+      },
+      "mime_types": {
+        "application/x-ndjson": 7
+      },
+      "query_parameter_names": [],
+      "average_har_time_ms": 1135.857,
+      "min_har_time_ms": 124.0,
+      "max_har_time_ms": 3382.0,
+      "total_response_body_bytes": 26876
+    },
+    {
+      "scheme": "https",
+      "host": "app.notion.com",
+      "path": "/api/v3/saveTransactionsFanout",
+      "method": "POST",
+      "ai_relevance": "correlated",
+      "role": "generic_persistence",
+      "notion_api_v3": true,
+      "count": 7,
+      "capture_counts": {
+        "ai-probe-gpt56-sol-medium.har": 1,
+        "ai-session-settled-full.har": 1,
+        "notion-live-session-2026-08-27.har": 5
+      },
+      "statuses": {
+        "0": 1,
+        "200": 6
+      },
+      "mime_types": {
+        "application/json; charset=utf-8": 6
+      },
+      "query_parameter_names": [],
+      "average_har_time_ms": 255.0,
+      "min_har_time_ms": 0.0,
+      "max_har_time_ms": 579.0,
+      "total_response_body_bytes": 8630
+    },
+    {
+      "scheme": "https",
+      "host": "app.notion.com",
+      "path": "/api/v3/syncRecordValuesMain",
+      "method": "POST",
+      "ai_relevance": "correlated",
+      "role": "generic_record_hydration",
+      "notion_api_v3": true,
+      "count": 2,
+      "capture_counts": {
+        "ai-probe-auto.har": 1,
+        "baseline-full.har": 1
+      },
+      "statuses": {
+        "200": 2
+      },
+      "mime_types": {
+        "application/json; charset=utf-8": 2
+      },
+      "query_parameter_names": [],
+      "average_har_time_ms": 143.0,
+      "min_har_time_ms": 128.0,
+      "max_har_time_ms": 158.0,
+      "total_response_body_bytes": 2951
+    },
+    {
+      "scheme": "https",
+      "host": "app.notion.com",
+      "path": "/api/v3/syncRecordValuesSpaceInitial",
+      "method": "POST",
+      "ai_relevance": "correlated",
+      "role": "generic_record_hydration",
+      "notion_api_v3": true,
+      "count": 64,
+      "capture_counts": {
+        "ai-probe-auto.har": 8,
+        "ai-probe-gpt56-sol-medium.har": 10,
+        "ai-probe-gpt56-sol-no-thinking.har": 12,
+        "ai-session-settled-full.har": 11,
+        "baseline-full.har": 3,
+        "notion-live-session-2026-08-27.har": 20
+      },
+      "statuses": {
+        "200": 64
+      },
+      "mime_types": {
+        "application/json; charset=utf-8": 64
+      },
+      "query_parameter_names": [],
+      "average_har_time_ms": 179.938,
+      "min_har_time_ms": 111.0,
+      "max_har_time_ms": 884.0,
+      "total_response_body_bytes": 118590
+    },
+    {
+      "scheme": "https",
+      "host": "app.notion.com",
+      "path": "/api/v3/warmSearchCache",
+      "method": "POST",
+      "ai_relevance": "support",
+      "role": "retrieval_warmup",
+      "notion_api_v3": true,
+      "count": 3,
+      "capture_counts": {
+        "ai-probe-auto.har": 1,
+        "ai-probe-gpt56-sol-no-thinking.har": 2
+      },
+      "statuses": {
+        "200": 3
+      },
+      "mime_types": {
+        "application/json; charset=utf-8": 3
+      },
+      "query_parameter_names": [],
+      "average_har_time_ms": 218.333,
+      "min_har_time_ms": 149.0,
+      "max_har_time_ms": 279.0,
+      "total_response_body_bytes": 2420
+    },
+    {
+      "scheme": "https",
+      "host": "app.notion.com",
+      "path": "/api/v3/warmVectorDBCache",
+      "method": "POST",
+      "ai_relevance": "support",
+      "role": "retrieval_warmup",
+      "notion_api_v3": true,
+      "count": 3,
+      "capture_counts": {
+        "ai-probe-auto.har": 1,
+        "ai-probe-gpt56-sol-no-thinking.har": 2
+      },
+      "statuses": {
+        "200": 3
+      },
+      "mime_types": {
+        "application/json; charset=utf-8": 3
+      },
+      "query_parameter_names": [],
+      "average_har_time_ms": 265.333,
+      "min_har_time_ms": 192.0,
+      "max_har_time_ms": 398.0,
+      "total_response_body_bytes": 2420
+    }
+  ]
+}

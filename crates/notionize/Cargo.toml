@@ -1,0 +1,19 @@
+[package]
+name = "notionize"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "notionize"
+path = "src/main.rs"
+
+[dependencies]
+notion-core = { path = "../notion-core" }
+notion-api = { path = "../notion-api" }
+notion-store = { path = "../notion-store" }
+notion-server = { path = "../notion-server" }
+tokio = { workspace = true }
+clap = { workspace = true }
+tracing.workspace = true
+tracing-subscriber = "0.3"

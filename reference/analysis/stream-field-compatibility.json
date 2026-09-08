@@ -1,0 +1,1451 @@
+{
+  "schema_version": "1.2",
+  "generated_at": "2026-08-27T04:42:29Z",
+  "title": "Notion inference stream field compatibility matrix",
+  "privacy_boundary": "This artifact contains only field names, structural observations, counts, timing positions, non-content metrics, and compatibility judgments. Prompts, response prose, account/workspace/thread/message identifiers, record values, cookies, headers, and credentials are excluded.",
+  "evidence_convention": "NDJSON indexes are zero-based. HAR evidence names only sanitized files and logical locations; no private values are reproduced.",
+  "scope": {
+    "endpoint": "POST /api/v3/runInferenceTranscript",
+    "sanitized_har_count": 6,
+    "inference_bearing_har_count": 5,
+    "har_inference_observation_count": 7,
+    "persistent_hook_target_count": 4,
+    "artifact_observation_count": 11,
+    "distinct_inference_transaction_count": 7,
+    "successful_inference_transaction_count": 5,
+    "captured_error_transaction_count": 2,
+    "captured_application_error_transaction_count": 2,
+    "source_hars": [
+      "reference/har/ai-probe-auto.sanitized.har",
+      "reference/har/ai-probe-gpt56-sol-medium.sanitized.har",
+      "reference/har/ai-probe-gpt56-sol-no-thinking.sanitized.har",
+      "reference/har/ai-session-settled-full.sanitized.har",
+      "reference/har/baseline-full.sanitized.har",
+      "reference/har/notion-live-session-2026-08-27.sanitized.har"
+    ],
+    "source_hook_schema": "reference/captures/sanitized/notionize-live-2026-08-27T03-50-19.759Z.schema.json",
+    "duplicate_observation": {
+      "capture": "ai-session-settled-full.sanitized.har",
+      "duplicate_of": "ai-probe-gpt56-sol-medium.sanitized.har",
+      "basis": "Sanitized request body and decoded response NDJSON are byte-equivalent according to the derived protocol audit."
+    },
+    "baseline_observation": "baseline-full.sanitized.har contains no runInferenceTranscript transaction.",
+    "source_overlap": {
+      "latest_har_entries": 3,
+      "matching_hook_targets": [2, 3, 4],
+      "overlap_basis": "Sanitized transcript type order and string lengths, NDJSON event order and outcome, and terminal usage/limit integers for the successful transaction.",
+      "hook_only_transaction": "Target 1 is a distinct short success with no matching HAR body."
+    },
+    "derived_sources": [
+      "reference/analysis/inference-protocol.json",
+      "reference/analysis/inference-protocol-findings.md",
+      "reference/analysis/browser-transport-static-analysis.md",
+      "reference/analysis/anthropic-sse-compatibility.md"
+    ]
+  },
+  "adapter_validation": {
+    "path": "reference/tools/notion-anthropic-sse",
+    "mode": "offline, buffered, text-only proof",
+    "anthropic_sdk_shape_version": "0.121.0",
+    "unit_tests": {
+      "command": "python3 -m unittest -v test_adapter.py",
+      "tests_run": 24,
+      "failures": 0,
+      "errors": 0
+    },
+    "sanitized_har_replay": {
+      "sanitized_hars_inspected": 6,
+      "inference_observations_found": 7,
+      "inference_observations_converted": 5,
+      "successful_observations_converted": 5,
+      "quota_observations_rejected": 2,
+      "distinct_inference_transactions": 6,
+      "distinct_har_transactions": 6,
+      "distinct_successful_har_transactions": 4,
+      "distinct_quota_har_transactions": 2,
+      "failed_conversions": 0,
+      "unexpected_failed_conversions": 0,
+      "terminal_usage_correction_matches_terminal_notion_counts": true,
+      "explicit_null_contract_fields_verified": true,
+      "sse_event_counts": {
+        "auto": 9,
+        "explicit_medium": 9,
+        "explicit_no_thinking": 10,
+        "settled_duplicate": 9,
+        "latest_long_success": 8,
+        "latest_quota_1": 0,
+        "latest_quota_2": 0
+      },
+      "sse_text_delta_counts": {
+        "auto": 4,
+        "explicit_medium": 4,
+        "explicit_no_thinking": 5,
+        "settled_duplicate": 4,
+        "latest_long_success": 3,
+        "latest_quota_1": 0,
+        "latest_quota_2": 0
+      }
+    },
+    "confirmed_behavior": [
+      "Buffers through patch-sync and verifies complete reconstructed state.",
+      "Retimes terminal Notion input/cache usage into message_start and re-emits cumulative input/cache/output usage at message_delta for SDK 0.121.0 accumulator correction.",
+      "Emits explicit nulls for SDK 0.121.0 message/delta container and stop details, text citations, cache counts, and extended usage fields that the Notion captures do not supply.",
+      "Marks end_turn as a synthetic adapter stop policy.",
+      "Does not project auto-load control steps as Anthropic tool calls.",
+      "Omits finishedAt, server timing, context/input limits, retry history, and failover metadata from the SSE projection.",
+      "Converts responses only; it does not reconstruct partial request history or map Notion thread identity to a provider continuation handle.",
+      "Fails closed for incomplete, misordered, non-text (including compaction), state-mismatched, or in-stream error inputs; an error is rejected before synthetic success SSE rendering.",
+      "Rejects captured application-level quota outcomes before synthetic success rendering; the target error status and taxonomy remain adapter policy.",
+      "Declares the conversion non-lossless and unsupported for reasoning, native tools, compaction, top-level stream errors, and cancellation."
+    ]
+  },
+  "anthropic_typescript_sdk_note": {
+    "sdk_version": "0.121.0",
+    "message_delta_usage_fields": [
+      "input_tokens",
+      "cache_creation_input_tokens",
+      "cache_read_input_tokens",
+      "output_tokens",
+      "output_tokens_details",
+      "server_tool_use"
+    ],
+    "message_delta_fields": [
+      "container",
+      "stop_details",
+      "stop_reason",
+      "stop_sequence"
+    ],
+    "text_block_required_nullable_fields": [
+      "citations"
+    ],
+    "tool_use_output_required_fields": [
+      "id",
+      "name",
+      "input",
+      "caller",
+      "type"
+    ],
+    "thinking_output_required_fields": [
+      "type",
+      "thinking",
+      "signature"
+    ],
+    "thinking_stream_order": [
+      "thinking_delta",
+      "signature_delta",
+      "content_block_stop"
+    ],
+    "redacted_thinking_round_trip_fields": [
+      "type",
+      "data"
+    ],
+    "beta_message_only_fields": [
+      "context_management",
+      "diagnostics"
+    ],
+    "beta_message_delta_top_level_fields": [
+      "context_management"
+    ],
+    "beta_start_and_delta_usage_fields": [
+      "fallback_credit",
+      "iterations"
+    ],
+    "accumulator_behavior": "MessageStream overwrites usage values from message_start when corresponding terminal MessageDeltaUsage fields are non-null.",
+    "compatibility_effect": "A live projection may use placeholder/inaccurate usage in message_start and achieve accurate final accumulated Notion-reported usage with a terminal message_delta correction. This does not make the initial event accurate and does not verify provider/tokenizer/cache semantics.",
+    "model_limit": "The final Notion model alias has no equivalent terminal correction path; placing it accurately in message_start still requires buffering and replay.",
+    "standard_field_provenance": [
+      {
+        "fields": ["message.id"],
+        "provenance": "synthesized",
+        "source": "No Anthropic message identifier is captured.",
+        "projection": "Generate a stable adapter identifier."
+      },
+      {
+        "fields": ["message.type", "message.role", "message.content", "content block indexes", "event lifecycle"],
+        "provenance": "reconstructed",
+        "source": "Successful Notion inference semantics and verified patch ordering.",
+        "projection": "Build the standard target-protocol lifecycle deterministically."
+      },
+      {
+        "fields": ["message.model"],
+        "provenance": "observable plus synthesized wrapper",
+        "source": "A terminal Notion alias is observable only after text streaming.",
+        "projection": "Wrap the alias in an adapter label; it is not an Anthropic model identity and requires buffering to be accurate at message_start."
+      },
+      {
+        "fields": ["usage.input_tokens", "message_delta.usage.input_tokens"],
+        "provenance": "observable integer, structurally retimed",
+        "source": "Terminal Notion inputTokens.",
+        "projection": "Retiming is wire-compatible, but uncached-token, tokenizer, billing, and context semantics are unverified."
+      },
+      {
+        "fields": ["usage.cache_creation_input_tokens", "usage.cache_read_input_tokens", "message_delta.usage.cache_creation_input_tokens", "message_delta.usage.cache_read_input_tokens"],
+        "provenance": "observable integers, structurally retimed",
+        "source": "Terminal Notion cache counters.",
+        "projection": "Cache boundaries, category equivalence, billing, and lifetime semantics are unverified."
+      },
+      {
+        "fields": ["message_start.usage.output_tokens"],
+        "provenance": "synthesized",
+        "source": "No initial output-token count is captured.",
+        "projection": "Emit a zero placeholder."
+      },
+      {
+        "fields": ["message_delta.usage.output_tokens"],
+        "provenance": "observable",
+        "source": "Terminal Notion outputTokens.",
+        "projection": "Emit as a cumulative terminal integer, not a per-delta count."
+      },
+      {
+        "fields": ["text content", "text_delta order"],
+        "provenance": "observable",
+        "source": "Initial inference text block followed by append-only content extensions.",
+        "projection": "Preserve exact visible bytes and ordering for successful text turns."
+      },
+      {
+        "fields": ["message.container", "message.stop_details", "message_delta.delta.container", "message_delta.delta.stop_details", "text.citations"],
+        "provenance": "synthesized null",
+        "source": "No corresponding captured value.",
+        "projection": "Emit explicit nulls required by the pinned SDK types."
+      },
+      {
+        "fields": ["usage.cache_creation", "usage.inference_geo", "usage.output_tokens_details", "usage.server_tool_use", "usage.service_tier"],
+        "provenance": "synthesized null",
+        "source": "No corresponding captured value.",
+        "projection": "Emit explicit nulls in message_start."
+      },
+      {
+        "fields": ["message_delta.delta.stop_sequence", "message_delta.usage.output_tokens_details", "message_delta.usage.server_tool_use"],
+        "provenance": "synthesized null",
+        "source": "No corresponding captured value.",
+        "projection": "Emit explicit nulls in the terminal event."
+      },
+      {
+        "fields": ["message_delta.delta.stop_reason"],
+        "provenance": "synthesized policy",
+        "source": "Successful completion is observable, but model stop cause is absent.",
+        "projection": "Any end_turn value is an explicit adapter policy."
+      },
+      {
+        "fields": ["content_block_stop", "message_stop"],
+        "provenance": "reconstructed",
+        "source": "Verified successful patch-sync.",
+        "projection": "Close the projected response only after terminal-state validation."
+      }
+    ]
+  },
+  "agent_cli_classification_legend": {
+    "native": "Explicitly present in the captured Notion evidence and preservable without guessing; this does not imply Anthropic provenance.",
+    "reconstructible": "Deterministically derivable from captured state without inventing model behavior.",
+    "synthetic": "Generated or policy-selected by the adapter or terminating gateway.",
+    "absent": "Not recoverable from these captures by buffering or wire reframing."
+  },
+  "agent_cli_field_matrix": [
+    {
+      "id": "text.visible_and_order",
+      "area": "text",
+      "downstream_field": "text content and text_delta order",
+      "wire_compatibility": "Complete SDK 0.121.0 text-block lifecycle can be emitted.",
+      "semantic_compatibility": "Visible text and order are exact.",
+      "classification": "native",
+      "agent_cli_effect": "Text display and accumulation work."
+    },
+    {
+      "id": "text.role_and_lifecycle",
+      "area": "text",
+      "downstream_field": "assistant role, block index, start and stop events",
+      "wire_compatibility": "Complete SDK event shape can be built.",
+      "semantic_compatibility": "Faithful for the observed one-block assistant inference.",
+      "classification": "reconstructible",
+      "agent_cli_effect": "A text-only SDK consumer can parse the turn."
+    },
+    {
+      "id": "identity.message_id",
+      "area": "identity",
+      "downstream_field": "message.id",
+      "wire_compatibility": "A stable adapter msg_ value is valid.",
+      "semantic_compatibility": "No Anthropic message identity is captured.",
+      "classification": "synthetic",
+      "agent_cli_effect": "Use a private correlation map and do not claim provider provenance."
+    },
+    {
+      "id": "identity.model",
+      "area": "identity",
+      "downstream_field": "message.model",
+      "wire_compatibility": "A notion/<alias> string is valid.",
+      "semantic_compatibility": "The source alias is not an Anthropic provider model ID.",
+      "classification": "synthetic",
+      "agent_cli_effect": "Do not use it for Anthropic capability or billing decisions."
+    },
+    {
+      "id": "usage.terminal_numbers",
+      "area": "usage",
+      "downstream_field": "input, output, cache-read, and cache-created counters",
+      "wire_compatibility": "Integers fit start and terminal usage fields.",
+      "semantic_compatibility": "They remain Notion-reported; tokenizer, billing, cache lifetime, and TTL equivalence are unverified.",
+      "classification": "native",
+      "agent_cli_effect": "Expose only as qualified Notion telemetry."
+    },
+    {
+      "id": "stop.terminal_success",
+      "area": "stop",
+      "downstream_field": "content close and message_stop",
+      "wire_compatibility": "Can be emitted after verified patch-sync.",
+      "semantic_compatibility": "Preserves product and transport completion, not the model stop cause.",
+      "classification": "reconstructible",
+      "agent_cli_effect": "A text turn can finish cleanly."
+    },
+    {
+      "id": "stop.end_turn",
+      "area": "stop",
+      "downstream_field": "stop_reason=end_turn",
+      "wire_compatibility": "Wire-valid.",
+      "semantic_compatibility": "No source stop field supports this specific cause.",
+      "classification": "synthetic",
+      "agent_cli_effect": "Treat as gateway policy, not native model evidence."
+    },
+    {
+      "id": "stop.other_causes",
+      "area": "stop",
+      "downstream_field": "tool_use, pause_turn, max_tokens, stop_sequence, refusal, model_context_window_exceeded, compaction",
+      "wire_compatibility": "Defined by standard or beta target types.",
+      "semantic_compatibility": "No matching live Notion cause is captured.",
+      "classification": "absent",
+      "agent_cli_effect": "Agent-loop branches on these values would be fabricated."
+    },
+    {
+      "id": "thinking.block_and_signature",
+      "area": "thinking",
+      "downstream_field": "thinking block, thinking_delta, signature_delta",
+      "wire_compatibility": "Target block and delta shapes are known.",
+      "semantic_compatibility": "No thinking text or opaque signature is captured.",
+      "classification": "absent",
+      "agent_cli_effect": "Do not emit thinking or attempt signed-thinking resume."
+    },
+    {
+      "id": "thinking.redacted",
+      "area": "thinking",
+      "downstream_field": "redacted_thinking.data",
+      "wire_compatibility": "Target opaque block shape is known.",
+      "semantic_compatibility": "Opaque data cannot be reconstructed or substituted with prose.",
+      "classification": "absent",
+      "agent_cli_effect": "Exact redacted-thinking round trip is unavailable."
+    },
+    {
+      "id": "tools.definitions",
+      "area": "tools",
+      "downstream_field": "tools[].name, description, input_schema",
+      "wire_compatibility": "Target request shape is known.",
+      "semantic_compatibility": "Connector labels and booleans are not executable schemas.",
+      "classification": "absent",
+      "agent_cli_effect": "A general tool-capable CLI cannot advertise captured tools faithfully."
+    },
+    {
+      "id": "tools.model_use",
+      "area": "tools",
+      "downstream_field": "tool_use id, name, input, caller and input_json_delta",
+      "wire_compatibility": "SDK 0.121.0 output shape is known and requires caller.",
+      "semantic_compatibility": "Auto-load results do not prove a model decision boundary.",
+      "classification": "absent",
+      "agent_cli_effect": "Do not enter a tool-execution loop from these traces."
+    },
+    {
+      "id": "tools.result_pairing",
+      "area": "tools",
+      "downstream_field": "user tool_result with tool_use_id, optional content and is_error",
+      "wire_compatibility": "Target request shape is known.",
+      "semantic_compatibility": "No exact provider-style invocation, result, and resume pair is captured.",
+      "classification": "absent",
+      "agent_cli_effect": "Tool continuation and recovery are unavailable."
+    },
+    {
+      "id": "errors.application_quota",
+      "area": "errors",
+      "downstream_field": "downstream error before SSE, or SSE error followed by close if streaming already began",
+      "wire_compatibility": "A conservative adapter error can be emitted.",
+      "semantic_compatibility": "Two live HTTP-200 NDJSON bodies contain a quota marker, no model call, no per-inference usage, and no successful terminal sync; target taxonomy and retryability are not captured.",
+      "classification": "reconstructible",
+      "agent_cli_effect": "Treat the transaction as failed and never append content closure or message_stop."
+    },
+    {
+      "id": "errors.stream_envelope",
+      "area": "errors",
+      "downstream_field": "SSE error frame",
+      "wire_compatibility": "Can be built from the static Notion error branch.",
+      "semantic_compatibility": "Error taxonomy, retryability, and partial-turn meaning remain unverified.",
+      "classification": "reconstructible",
+      "agent_cli_effect": "Fail closed and never append synthetic success."
+    },
+    {
+      "id": "errors.native_taxonomy",
+      "area": "errors",
+      "downstream_field": "provider error type and retry policy",
+      "wire_compatibility": "A generic target error type exists.",
+      "semantic_compatibility": "The two live quota outcomes establish an application failure, but not an Anthropic-native subtype, HTTP status, or retry policy.",
+      "classification": "absent",
+      "agent_cli_effect": "Do not infer retry safety or provider error identity."
+    },
+    {
+      "id": "resume.complete_history",
+      "area": "resume",
+      "downstream_field": "complete ordered messages and opaque continuation state",
+      "wire_compatibility": "Target messages array shape is known.",
+      "semantic_compatibility": "The partial Notion continuation omits canonical prior history.",
+      "classification": "absent",
+      "agent_cli_effect": "Stateless resume is not viable."
+    },
+    {
+      "id": "resume.gateway_ledger",
+      "area": "resume",
+      "downstream_field": "gateway-owned canonical conversation ledger",
+      "wire_compatibility": "A next request can be built if the gateway recorded every turn from turn one.",
+      "semantic_compatibility": "Only exact fields and opaque values actually owned by the gateway can be preserved.",
+      "classification": "reconstructible",
+      "agent_cli_effect": "A terminating gateway can resume; a response-only proxy cannot."
+    },
+    {
+      "id": "compaction.request",
+      "area": "compaction",
+      "downstream_field": "beta header and context_management compact_20260112 edit",
+      "wire_compatibility": "Target request shape is known.",
+      "semantic_compatibility": "No captured Notion request supplied this policy or its trigger state.",
+      "classification": "absent",
+      "agent_cli_effect": "Adding it is new target-side policy, not translation."
+    },
+    {
+      "id": "compaction.response_and_resume",
+      "area": "compaction",
+      "downstream_field": "compaction block/delta, encrypted_content, stop cause, and iteration ledger",
+      "wire_compatibility": "Beta response shapes are known.",
+      "semantic_compatibility": "No required live state exists in the five successful streams or two quota outcomes.",
+      "classification": "absent",
+      "agent_cli_effect": "Native compaction resume cannot be reproduced."
+    },
+    {
+      "id": "compaction.beta_envelope",
+      "area": "compaction",
+      "downstream_field": "message.context_management, message.diagnostics, message_delta.context_management, usage.fallback_credit, usage.iterations",
+      "wire_compatibility": "SDK 0.121.0 beta fields are known.",
+      "semantic_compatibility": "No equivalent live Notion fields are captured.",
+      "classification": "absent",
+      "agent_cli_effect": "Do not emit placeholders as if they were native beta state."
+    },
+    {
+      "id": "compaction.gateway_policy",
+      "area": "compaction",
+      "downstream_field": "adapter-created summary or target-side compaction invocation",
+      "wire_compatibility": "A stateful gateway can issue a fresh target request.",
+      "semantic_compatibility": "The policy and resulting state originate in the gateway, not the Notion capture.",
+      "classification": "synthetic",
+      "agent_cli_effect": "Viable only as explicit terminating-gateway behavior with provenance."
+    }
+  ],
+  "capture_ceiling": {
+    "interpretation": "Absence in five distinct successful text-only transactions and two quota outcomes means not observed in this capture set, not that Notion cannot emit the state.",
+    "static_counterevidence": "Recovered reducers contain Notion-specific summary and compaction step types, but no live values, ordering, or resume behavior for those types were captured.",
+    "instrumented_context_management": {
+      "createSummaryThreshold": 0.01,
+      "updateSummaryInterval": 0.005,
+      "compactThreshold": 0.02,
+      "recentSearchToolResultsToKeep": -1,
+      "qualification": "Forced instrumentation values, not observed product defaults. The long content became prior history only on the next request, and both subsequent requests failed at quota before a model call. No successful post-long-history request was captured, so the compaction path remains untested."
+    },
+    "needed_live_states": [
+      "A successful request after the captured long prior history, including summary creation and update schemas if triggered.",
+      "activate-transcript-compaction with pre/post record-map structure and the next resumed request.",
+      "Opaque compaction state, trigger/limit fields, stop/outcome signals, and per-iteration usage if present.",
+      "Interrupted, retried, and summarize-transcript-error paths.",
+      "A genuine model tool call, refusal or limit stop, and live stream/HTTP/cancellation failures."
+    ]
+  },
+  "status_legend": {
+    "observed": "Present in at least one sanitized live capture.",
+    "not_observed": "Searched for but absent from all captured inference transactions; makes no claim about other Notion states or builds.",
+    "static_only": "Present in recovered browser code but not exercised by a captured inference transaction.",
+    "derived_constraint": "A compatibility limit for these captured artifacts deduced from observed presence or absence."
+  },
+  "hook_transaction_summary": [
+    {
+      "target": 1,
+      "relationship": "Distinct hook-only short success; absent from the latest HAR.",
+      "request_mode": "partial transcript with instrumented context-management thresholds",
+      "request_user_string_characters": 86,
+      "response_event_count": 7,
+      "response_lifecycle": ["patch-start", "patch", "patch", "patch", "patch", "record-map", "patch-sync"],
+      "outcome": "success",
+      "model_call_count": 1,
+      "usage": {
+        "input_tokens": 29911,
+        "output_tokens": 18,
+        "cached_tokens_read": 29580,
+        "cached_tokens_created": 12484,
+        "max_context_tokens": 200000,
+        "max_input_tokens": 160000
+      },
+      "summary_or_compaction_marker_count": 0
+    },
+    {
+      "target": 2,
+      "relationship": "Distinct long success; overlaps the first entry in the latest HAR.",
+      "request_mode": "partial transcript with instrumented context-management thresholds",
+      "request_user_string_characters": 34045,
+      "response_event_count": 8,
+      "response_lifecycle": ["patch-start", "patch", "patch", "patch", "patch", "patch", "record-map", "patch-sync"],
+      "outcome": "success",
+      "model_call_count": 1,
+      "usage": {
+        "input_tokens": 34685,
+        "output_tokens": 7,
+        "cached_tokens_read": 29580,
+        "cached_tokens_created": 28949,
+        "max_context_tokens": 200000,
+        "max_input_tokens": 160000
+      },
+      "summary_or_compaction_marker_count": 0
+    },
+    {
+      "target": 3,
+      "relationship": "Distinct quota failure; overlaps the second entry in the latest HAR.",
+      "request_mode": "partial transcript with instrumented context-management thresholds",
+      "response_event_count": 2,
+      "response_lifecycle": ["patch-start", "record-map"],
+      "outcome": "application-level-quota-failure",
+      "model_call_count": 0,
+      "per_inference_usage_present": false,
+      "terminal_patch_sync_present": false,
+      "summary_or_compaction_marker_count": 0
+    },
+    {
+      "target": 4,
+      "relationship": "Distinct quota failure; overlaps the third entry in the latest HAR.",
+      "request_mode": "partial transcript with instrumented context-management thresholds",
+      "response_event_count": 2,
+      "response_lifecycle": ["patch-start", "record-map"],
+      "outcome": "application-level-quota-failure",
+      "model_call_count": 0,
+      "per_inference_usage_present": false,
+      "terminal_patch_sync_present": false,
+      "summary_or_compaction_marker_count": 0
+    }
+  ],
+  "trace_timing": [
+    {
+      "capture": "ai-probe-auto.sanitized.har",
+      "transaction_role": "distinct, new full thread",
+      "request_flags": {
+        "createThread": true,
+        "isPartialTranscript": false,
+        "asPatchResponse": true,
+        "patchResponseVersion": 2
+      },
+      "reasoning_effort_field": "absent",
+      "event_count": 15,
+      "initial_inference_line": 7,
+      "text_delta_lines": [8, 9, 10],
+      "terminal_metadata_line": 11,
+      "record_map_line": 13,
+      "patch_sync_line": 14,
+      "input_tokens": 22560,
+      "output_tokens": 8,
+      "cached_tokens_read": 20864,
+      "cached_tokens_created": 0,
+      "auto_load_tool_result_count": 3
+    },
+    {
+      "capture": "ai-probe-gpt56-sol-medium.sanitized.har",
+      "transaction_role": "distinct, partial continuation",
+      "request_flags": {
+        "createThread": false,
+        "isPartialTranscript": true,
+        "asPatchResponse": true,
+        "patchResponseVersion": 2
+      },
+      "reasoning_effort_field": "medium",
+      "event_count": 9,
+      "initial_inference_line": 1,
+      "text_delta_lines": [2, 3, 4],
+      "terminal_metadata_line": 5,
+      "record_map_line": 7,
+      "patch_sync_line": 8,
+      "input_tokens": 4862,
+      "output_tokens": 8,
+      "cached_tokens_read": 4859,
+      "cached_tokens_created": 16967,
+      "auto_load_tool_result_count": 0
+    },
+    {
+      "capture": "ai-probe-gpt56-sol-no-thinking.sanitized.har",
+      "transaction_role": "distinct, new full thread",
+      "request_flags": {
+        "createThread": true,
+        "isPartialTranscript": false,
+        "asPatchResponse": true,
+        "patchResponseVersion": 2
+      },
+      "reasoning_effort_field": "none",
+      "event_count": 15,
+      "initial_inference_line": 5,
+      "text_delta_lines": [6, 7, 8, 9],
+      "terminal_metadata_line": 10,
+      "record_map_line": 13,
+      "patch_sync_line": 14,
+      "input_tokens": 3,
+      "output_tokens": 9,
+      "cached_tokens_read": 0,
+      "cached_tokens_created": 20567,
+      "auto_load_tool_result_count": 3
+    },
+    {
+      "capture": "notion-live-session-2026-08-27.sanitized.har",
+      "transaction_role": "distinct long success; overlaps hook target 2",
+      "request_mode": "partial instrumented request",
+      "event_count": 8,
+      "initial_inference_line": 1,
+      "text_delta_lines": [2, 3],
+      "terminal_metadata_line": 4,
+      "record_map_line": 6,
+      "patch_sync_line": 7,
+      "input_tokens": 34685,
+      "output_tokens": 7,
+      "cached_tokens_read": 29580,
+      "cached_tokens_created": 28949,
+      "max_context_tokens": 200000,
+      "max_input_tokens": 160000,
+      "auto_load_tool_result_count": 0
+    },
+    {
+      "capture": "ai-session-settled-full.sanitized.har",
+      "transaction_role": "duplicate observation of partial continuation",
+      "duplicate_of": "ai-probe-gpt56-sol-medium.sanitized.har"
+    },
+    {
+      "capture": "baseline-full.sanitized.har",
+      "transaction_role": "baseline",
+      "inference_transaction_count": 0
+    }
+  ],
+  "compatibility_matrix": [
+    {
+      "id": "stream.transport.ndjson",
+      "category": "streaming",
+      "source_field": "HTTP response Content-Type: application/x-ndjson",
+      "observation_status": "observed",
+      "observation_scope": "All 7 distinct transactions—5 successes and 2 application-level quota failures—returned HTTP 200",
+      "stream_timing": "start",
+      "semantics": "A newline-delimited JSON response consumed incrementally by the browser.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "Requires reframing as text/event-stream SSE; the wire formats are not identical.",
+      "openai_analogue": "Requires reframing as OpenAI SSE events; the wire formats are not identical.",
+      "buffering_requirement": "No full buffering is required merely to parse complete NDJSON lines.",
+      "evidence": [
+        "All inference-bearing sanitized HAR response headers",
+        "browser-transport-static-analysis.md: Fetch and NDJSON decoding"
+      ]
+    },
+    {
+      "id": "stream.lifecycle",
+      "category": "streaming",
+      "source_field": "patch-start -> patch* -> record-map -> patch-sync",
+      "observation_status": "observed",
+      "observation_scope": "All 5 distinct successful transactions; the 2 quota failures stop after record-map without patch-sync",
+      "stream_timing": "start",
+      "semantics": "State-patch lifecycle with patch-sync as the authoritative assembled terminal state.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "Adapter lifecycle only; emit Anthropic message/content events after applying Notion patches.",
+      "openai_analogue": "Adapter lifecycle only; emit response/output events after applying Notion patches.",
+      "buffering_requirement": "Incremental replay is possible, but terminal verification requires retaining assembled state.",
+      "evidence": [
+        "Trace timing entries in this artifact",
+        "inference-protocol.json: stream.line_types_in_order and patch reconstruction"
+      ]
+    },
+    {
+      "id": "stream.initial_text_block",
+      "category": "streaming",
+      "source_field": "agent-inference.value[].{type,content} appended at /s/-",
+      "observation_status": "observed",
+      "observation_scope": "One text block in every successful transaction; neither quota failure contains a model call",
+      "stream_timing": "start",
+      "semantics": "The initial assistant text fragment and its block type.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "content_block_start(type=text), followed by a text_delta for any non-empty initial fragment.",
+      "openai_analogue": "response.output_text.delta or Chat Completions delta.content.",
+      "buffering_requirement": "None for text; model and initial usage remain unavailable at this point.",
+      "evidence": [
+        "auto NDJSON[7]",
+        "medium NDJSON[1]",
+        "no-thinking NDJSON[5]",
+        "latest long-success NDJSON[1]",
+        "hook-only short-success inference schema"
+      ]
+    },
+    {
+      "id": "stream.text_delta",
+      "category": "streaming",
+      "source_field": "patch operation o=x targeting /value/0/content",
+      "observation_status": "observed",
+      "observation_scope": "Append-only extensions occur in all 5 successes; the legacy HAR counts are 3, 3, and 4 and the latest long-success HAR count is 2",
+      "stream_timing": "delta",
+      "semantics": "Append-only text fragments for the active inference text block.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "content_block_delta with delta.type=text_delta.",
+      "openai_analogue": "response.output_text.delta; Chat Completions choices[].delta.content.",
+      "buffering_requirement": "None for low-latency text projection.",
+      "evidence": [
+        "auto NDJSON[8..10]",
+        "medium NDJSON[2..4]",
+        "no-thinking NDJSON[6..9]",
+        "latest long-success NDJSON[2..3]",
+        "hook-only short-success response schema"
+      ]
+    },
+    {
+      "id": "stream.final_sync",
+      "category": "streaming",
+      "source_field": "patch-sync.data.s",
+      "observation_status": "observed",
+      "observation_scope": "Terminal event in all 5 distinct successful transactions; absent from both quota failures",
+      "stream_timing": "terminal",
+      "semantics": "Authoritative final Notion state after the patch sequence.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "Supports closing content blocks and message_stop only after state validation; it does not supply a model stop reason.",
+      "openai_analogue": "Supports response.completed by adapter policy; it is not an OpenAI finish_reason.",
+      "buffering_requirement": "Retain enough state to verify streamed text and terminal metadata.",
+      "evidence": [
+        "auto NDJSON[14]",
+        "medium NDJSON[8]",
+        "no-thinking NDJSON[14]",
+        "latest long-success NDJSON[7]",
+        "hook-only short-success terminal schema"
+      ]
+    },
+    {
+      "id": "model.final_alias",
+      "category": "model",
+      "source_field": "agent-inference.model",
+      "observation_status": "observed",
+      "observation_scope": "Present in terminal metadata for all 5 distinct successful transactions; no model metadata exists for the quota failures",
+      "stream_timing": "terminal",
+      "semantics": "Notion's final internal model alias for the inference.",
+      "semantics_confidence": "high for alias presence; low for upstream provider identity",
+      "anthropic_mapping": "Adapter-defined model label only; it does not prove an Anthropic model ID.",
+      "openai_analogue": "Adapter-defined model label only; it does not prove an OpenAI model ID.",
+      "buffering_requirement": "Full-stream buffering is required to place the observed final alias in message_start; unlike usage, the alias has no terminal correction path.",
+      "evidence": [
+        "auto NDJSON[11]",
+        "medium NDJSON[5]",
+        "no-thinking NDJSON[10]",
+        "latest long-success NDJSON[4]",
+        "hook-only short-success terminal schema"
+      ]
+    },
+    {
+      "id": "usage.input_tokens",
+      "category": "token_accounting",
+      "source_field": "agent-inference.inputTokens",
+      "observation_status": "observed",
+      "observation_scope": "Terminal integer in all 5 distinct successful transactions; absent from both quota failures",
+      "stream_timing": "terminal",
+      "semantics": "Notion-reported input-token total for the inference; tokenizer and billing boundary are not exposed.",
+      "semantics_confidence": "medium",
+      "anthropic_mapping": "Projectable to message_start usage after buffering, or to terminal MessageDeltaUsage.input_tokens as a live correction for Anthropic TypeScript SDK 0.121.0 clients. Provider/tokenizer equivalence remains unverified.",
+      "openai_analogue": "Numerically projectable to response usage.input_tokens with the same qualification.",
+      "buffering_requirement": "Full buffering is required for an accurate message_start, but not for accurate final accumulated usage when a compatible client applies terminal non-null usage corrections.",
+      "evidence": [
+        "Terminal metadata in the 4 HAR-backed distinct successes and hook-only short-success schema"
+      ]
+    },
+    {
+      "id": "usage.output_tokens",
+      "category": "token_accounting",
+      "source_field": "agent-inference.outputTokens",
+      "observation_status": "observed",
+      "observation_scope": "Terminal integer in all 5 distinct successful transactions; absent from both quota failures",
+      "stream_timing": "terminal",
+      "semantics": "Notion-reported cumulative output-token total.",
+      "semantics_confidence": "medium",
+      "anthropic_mapping": "message_delta.usage.output_tokens at completion; not a per-delta count.",
+      "openai_analogue": "response.completed usage.output_tokens; not a per-delta count.",
+      "buffering_requirement": "No buffering is needed if usage is emitted only at the downstream terminal event.",
+      "evidence": [
+        "Terminal metadata in the 4 HAR-backed distinct successes and hook-only short-success schema"
+      ]
+    },
+    {
+      "id": "usage.per_delta",
+      "category": "token_accounting",
+      "source_field": "per-delta token usage",
+      "observation_status": "not_observed",
+      "observation_scope": "Absent from every text-extension event in all captures",
+      "stream_timing": "not_observed",
+      "semantics": "No token count can be attributed to an individual text fragment from captured fields.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "Do not fabricate per-delta usage; Anthropic final output usage is cumulative.",
+      "openai_analogue": "Do not fabricate per-event usage.",
+      "buffering_requirement": "Terminal usage only.",
+      "evidence": [
+        "All x-operation text-delta lines listed in trace_timing"
+      ]
+    },
+    {
+      "id": "usage.thread_summary",
+      "category": "token_accounting",
+      "source_field": "recordMap.thread.*.data.usage_summary",
+      "observation_status": "observed",
+      "observation_scope": "Returned in terminal record maps; values are thread/accounting state rather than delta fields",
+      "stream_timing": "terminal",
+      "semantics": "Cumulative Notion thread usage/accounting summary, distinct from the active inference's terminal fields.",
+      "semantics_confidence": "medium",
+      "anthropic_mapping": "Sidecar telemetry only; do not map cumulative thread totals into one Messages response usage object.",
+      "openai_analogue": "Sidecar telemetry only; do not map cumulative thread totals into one response usage object.",
+      "buffering_requirement": "Terminal only; keep separate from per-response usage.",
+      "evidence": [
+        "record-map terminal events in the inference-bearing sanitized HARs"
+      ]
+    },
+    {
+      "id": "cache.tokens_read",
+      "category": "caching",
+      "source_field": "agent-inference.cachedTokensRead",
+      "observation_status": "observed",
+      "observation_scope": "Terminal integer in all 5 distinct successful transactions, including zero; absent from both quota failures",
+      "stream_timing": "terminal",
+      "semantics": "Notion-reported cached input tokens read; exact provider cache semantics are hidden.",
+      "semantics_confidence": "medium for count, low for provider equivalence",
+      "anthropic_mapping": "Qualified projection to cache_read_input_tokens in message_start after buffering, or as a terminal MessageDeltaUsage correction for Anthropic TypeScript SDK 0.121.0 clients; sidecar telemetry remains safest when provider cache semantics matter.",
+      "openai_analogue": "Qualified projection to input_tokens_details.cached_tokens or adapter sidecar telemetry only.",
+      "buffering_requirement": "Full buffering is needed for accurate initial usage, but a compatible client can accumulate an accurate final count from a terminal correction.",
+      "evidence": [
+        "Terminal metadata in the 4 HAR-backed distinct successes and hook-only short-success schema"
+      ]
+    },
+    {
+      "id": "cache.tokens_created",
+      "category": "caching",
+      "source_field": "agent-inference.cachedTokensCreated",
+      "observation_status": "observed",
+      "observation_scope": "Terminal integer in all 5 distinct successful transactions, including zero; absent from both quota failures",
+      "stream_timing": "terminal",
+      "semantics": "Notion-reported cached tokens created; creation/billing semantics are not exposed.",
+      "semantics_confidence": "medium for count, low for provider equivalence",
+      "anthropic_mapping": "Qualified projection to cache_creation_input_tokens in message_start after buffering, or as a terminal MessageDeltaUsage correction for Anthropic TypeScript SDK 0.121.0 clients; sidecar telemetry remains safest when provider cache semantics matter.",
+      "openai_analogue": "No verified direct field-equivalent; preserve as adapter sidecar telemetry.",
+      "buffering_requirement": "Full buffering is needed for accurate initial usage, but a compatible client can accumulate an accurate final count from a terminal correction.",
+      "evidence": [
+        "Terminal metadata in the 4 HAR-backed distinct successes and hook-only short-success schema"
+      ]
+    },
+    {
+      "id": "cache.debug_override",
+      "category": "caching",
+      "source_field": "request.debugOverrides.cachedInferences",
+      "observation_status": "observed",
+      "observation_scope": "Present as an empty object in all 7 inference-bearing HAR observations",
+      "stream_timing": "request",
+      "semantics": "An unused debug override container in these requests, not evidence of a cache policy.",
+      "semantics_confidence": "high for captured emptiness; low for behavior when populated",
+      "anthropic_mapping": "None.",
+      "openai_analogue": "None.",
+      "buffering_requirement": "Not applicable.",
+      "evidence": [
+        "All inference-bearing sanitized request bodies"
+      ]
+    },
+    {
+      "id": "cache.anthropic_control",
+      "category": "caching",
+      "source_field": "Anthropic cache_control request blocks",
+      "observation_status": "not_observed",
+      "observation_scope": "Absent from captured Notion inference requests",
+      "stream_timing": "not_observed",
+      "semantics": "Captured counts do not reveal which content was cached or its requested lifetime.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "Cannot reconstruct cache_control boundaries from terminal counts.",
+      "openai_analogue": "Not applicable.",
+      "buffering_requirement": "Not safely mappable.",
+      "evidence": [
+        "All sanitized runInferenceTranscript request schemas"
+      ]
+    },
+    {
+      "id": "cache.openai_controls",
+      "category": "caching",
+      "source_field": "OpenAI prompt_cache_key / prompt_cache_retention",
+      "observation_status": "not_observed",
+      "observation_scope": "Absent from captured Notion inference requests",
+      "stream_timing": "not_observed",
+      "semantics": "No captured field supplies an OpenAI cache key or retention policy.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "Not applicable.",
+      "openai_analogue": "Cannot reconstruct prompt_cache_key or prompt_cache_retention from token totals.",
+      "buffering_requirement": "Not safely mappable.",
+      "evidence": [
+        "All sanitized runInferenceTranscript request schemas"
+      ]
+    },
+    {
+      "id": "limits.context",
+      "category": "token_accounting",
+      "source_field": "agent-inference.maxContextTokens and maxInputTokens",
+      "observation_status": "observed",
+      "observation_scope": "Terminal integers in all 5 distinct successful transactions; absent from both quota failures",
+      "stream_timing": "terminal",
+      "semantics": "Notion/backend capacity metadata returned after generation; not a requested output limit.",
+      "semantics_confidence": "medium",
+      "anthropic_mapping": "Do not map to request max_tokens; target-model limits require adapter policy.",
+      "openai_analogue": "Do not map to max_output_tokens; target-model limits require adapter policy.",
+      "buffering_requirement": "Terminal sidecar metadata only.",
+      "evidence": [
+        "Terminal metadata in the 4 HAR-backed distinct successes and hook-only short-success schema"
+      ]
+    },
+    {
+      "id": "timing.finished",
+      "category": "completion",
+      "source_field": "agent-inference.finishedAt",
+      "observation_status": "observed",
+      "observation_scope": "Added after the last text delta in all 5 successful transactions; absent from both quota failures",
+      "stream_timing": "terminal",
+      "semantics": "Terminal timestamp for the Notion inference step.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "Sidecar timing; it can support completion detection but is not stop_reason.",
+      "openai_analogue": "Sidecar timing; it is not finish_reason.",
+      "buffering_requirement": "None beyond waiting for terminal metadata.",
+      "evidence": [
+        "auto NDJSON[11]",
+        "medium NDJSON[5]",
+        "no-thinking NDJSON[10]",
+        "latest long-success NDJSON[4]",
+        "hook-only short-success terminal schema"
+      ]
+    },
+    {
+      "id": "timing.server_metrics",
+      "category": "streaming",
+      "source_field": "serverTimeToSubmitLlmMs, serverTimeToFirstTokenMs, serverPostSubmitTimeToFirstTokenMs",
+      "observation_status": "observed",
+      "observation_scope": "All 5 distinct successful transactions",
+      "stream_timing": "terminal",
+      "semantics": "Server-side latency telemetry, including time to first token, revealed only after text streaming.",
+      "semantics_confidence": "medium",
+      "anthropic_mapping": "Sidecar metrics only; no standard Messages SSE fields.",
+      "openai_analogue": "Sidecar metrics only; no standard Responses SSE fields.",
+      "buffering_requirement": "Terminal sidecar metadata only.",
+      "evidence": [
+        "Terminal metadata in the 4 HAR-backed distinct successes and hook-only short-success schema"
+      ]
+    },
+    {
+      "id": "timing.last_stream_frame_telemetry",
+      "category": "streaming",
+      "source_field": "telemetry.time_since_last_stream_frame_ms",
+      "observation_status": "observed",
+      "observation_scope": "Post-stream telemetry is established for the 4 legacy inference-bearing HAR observations; it is not required for the newer body-level outcome classification",
+      "stream_timing": "terminal",
+      "semantics": "Client telemetry measuring delay from the last stream frame; it is outside the inference NDJSON body.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "Sidecar telemetry only.",
+      "openai_analogue": "Sidecar telemetry only.",
+      "buffering_requirement": "Not part of the converted response.",
+      "evidence": [
+        "Sanitized etClient and collector requests following each inference"
+      ]
+    },
+    {
+      "id": "completion.success_evidence",
+      "category": "stop_reasons",
+      "source_field": "patch-sync plus record-map outcome status and post-stream terminal_reason/completion_source telemetry",
+      "observation_status": "observed",
+      "observation_scope": "All 5 distinct successes have completed record outcomes and patch-sync; legacy telemetry also reports completed stream, non-error, non-retry status",
+      "stream_timing": "terminal",
+      "semantics": "Strong evidence that the Notion turn completed successfully, but not why the model stopped generating.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "May justify message_stop after a policy-selected stop_reason; does not itself select end_turn, max_tokens, stop_sequence, tool_use, or another reason.",
+      "openai_analogue": "May justify response.completed; does not itself supply a Chat Completions finish_reason.",
+      "buffering_requirement": "Wait for terminal state; keep telemetry outside the content stream.",
+      "evidence": [
+        "record-map outcome status and patch-sync in all 5 distinct successes",
+        "legacy sanitized completion telemetry"
+      ]
+    },
+    {
+      "id": "completion.stop_reason",
+      "category": "stop_reasons",
+      "source_field": "stop_reason and stop_sequence",
+      "observation_status": "not_observed",
+      "observation_scope": "Absent from all inference request, NDJSON, final state, and returned record fields inspected",
+      "stream_timing": "not_observed",
+      "semantics": "Natural stop, limit stop, stop-sequence match, tool stop, refusal, and similar causes cannot be distinguished.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "No faithful value. Any message_delta.stop_reason is an explicit adapter policy, not a recovered field; stop_sequence must remain null/unknown.",
+      "openai_analogue": "No faithful Chat Completions finish_reason or Responses incomplete_details reason.",
+      "buffering_requirement": "Buffering does not recover the missing semantics.",
+      "evidence": [
+        "All 6 sanitized HAR field audits plus the hook-only success schema",
+        "anthropic-sse-compatibility.md: Natural stop reason"
+      ]
+    },
+    {
+      "id": "retry.previous_attempts",
+      "category": "errors",
+      "source_field": "agent-inference.previousAttemptValues",
+      "observation_status": "observed",
+      "observation_scope": "Present as an empty array in all 5 successful HAR observations and both successful hook observations; no model call exists in the quota failures",
+      "stream_timing": "start",
+      "semantics": "The field can carry attempt history in principle, but no prior attempt is represented in these traces.",
+      "semantics_confidence": "high for emptiness; low for unobserved populated schema",
+      "anthropic_mapping": "No emitted event; retain only as private adapter metadata if future populated examples are understood.",
+      "openai_analogue": "No direct response field.",
+      "buffering_requirement": "Not applicable for captured empty arrays.",
+      "evidence": [
+        "Initial agent-inference append and patch-sync state in all inference-bearing sanitized HARs"
+      ]
+    },
+    {
+      "id": "retry.model_failover",
+      "category": "errors",
+      "source_field": "agent-inference.isModelFailover",
+      "observation_status": "observed",
+      "observation_scope": "No affirmative model-failover value is present in any of the 5 successful transactions; the 2 quota failures contain no model call",
+      "stream_timing": "terminal",
+      "semantics": "No model failover was observed.",
+      "semantics_confidence": "high for these captures; low for unobserved failover behavior",
+      "anthropic_mapping": "Sidecar telemetry only if a future affirmative value is captured.",
+      "openai_analogue": "Sidecar telemetry only.",
+      "buffering_requirement": "Terminal sidecar metadata only.",
+      "evidence": [
+        "Terminal metadata across all 5 distinct successful transactions",
+        "inference-protocol.json final_inference.modelFailover=null"
+      ]
+    },
+    {
+      "id": "error.application_quota",
+      "category": "errors",
+      "source_field": "record-map application outcome premium-feature-unavailable",
+      "observation_status": "observed",
+      "observation_scope": "2 distinct live transactions, each HTTP 200 with patch-start then record-map, no model call, no per-inference usage, and no patch-sync",
+      "stream_timing": "terminal_application_failure",
+      "semantics": "The HTTP exchange succeeded, but the Notion application rejected the inference before any model call.",
+      "semantics_confidence": "high for application failure; low for downstream provider taxonomy and retryability",
+      "anthropic_mapping": "Return a conservative downstream error before SSE in buffered mode. If downstream streaming already began, emit an error and close without content closure or message_stop. Do not label it a native rate_limit_error without an explicit gateway policy.",
+      "openai_analogue": "Return a conservative failed response/error according to gateway policy; do not claim an OpenAI-native quota subtype from this marker alone.",
+      "buffering_requirement": "The body must be classified before declaring success; the proof adapter rejects it before rendering any SSE event.",
+      "evidence": [
+        "Latest hook targets 3 and 4 sanitized outcome schemas",
+        "Latest sanitized HAR quota entries"
+      ]
+    },
+    {
+      "id": "error.in_stream",
+      "category": "errors",
+      "source_field": "NDJSON event {type:error,message,code}",
+      "observation_status": "static_only",
+      "observation_scope": "Recognized by the recovered browser wrapper; absent from all 7 captured transaction bodies",
+      "stream_timing": "static_only",
+      "semantics": "The client can convert an in-stream error event into a structured error result, but taxonomy and timing are untested.",
+      "semantics_confidence": "high for client recognition; low for server behavior",
+      "anthropic_mapping": "An adapter could emit an Anthropic SSE error and close without message_stop after streaming has begun.",
+      "openai_analogue": "An adapter could emit an error event or terminate a failed response according to its public contract.",
+      "buffering_requirement": "Fail closed; do not synthesize a successful terminal event after an error.",
+      "evidence": [
+        "browser-transport-static-analysis.md: Inference wrapper",
+        "No type=error record in captured inference streams"
+      ]
+    },
+    {
+      "id": "error.http_non_200",
+      "category": "errors",
+      "source_field": "HTTP non-200 structured failure path",
+      "observation_status": "static_only",
+      "observation_scope": "Implemented in recovered transport; all 7 distinct captured transactions returned HTTP 200, including both application-level failures",
+      "stream_timing": "static_only",
+      "semantics": "Pre-stream HTTP failures take a non-success parser path.",
+      "semantics_confidence": "high for client branch; low for uncaptured payload taxonomy",
+      "anthropic_mapping": "Map before SSE begins to the appropriate non-200 Anthropic JSON error only when source status/payload semantics are known.",
+      "openai_analogue": "Map before SSE begins to the appropriate non-200 OpenAI-style error only when semantics are known.",
+      "buffering_requirement": "Not applicable before stream start.",
+      "evidence": [
+        "browser-transport-static-analysis.md: Fetch and NDJSON decoding",
+        "All captured inference response statuses are 200"
+      ]
+    },
+    {
+      "id": "error.abort_and_cancel",
+      "category": "errors",
+      "source_field": "AbortSignal / status-0 AbortedError",
+      "observation_status": "static_only",
+      "observation_scope": "Abort support exists in recovered code; no live cancellation or aborted inference was captured",
+      "stream_timing": "static_only",
+      "semantics": "Client cancellation is distinguishable from other HTTP failures in the browser wrapper, but no server cancellation event is established.",
+      "semantics_confidence": "high for local abort branch; low for server-side effect",
+      "anthropic_mapping": "No standard cancelled stop_reason; propagate cancellation out of band and do not fabricate message_stop.",
+      "openai_analogue": "Treat as client abort/out-of-band cancellation unless an explicit failed/cancelled response event exists.",
+      "buffering_requirement": "Close/fail the projection according to adapter cancellation policy.",
+      "evidence": [
+        "browser-transport-static-analysis.md: Inference wrapper and Fetch decoder",
+        "No captured cancellation event"
+      ]
+    },
+    {
+      "id": "tools.autoload_results",
+      "category": "tools",
+      "source_field": "agent-tool-result with autoLoadPhase",
+      "observation_status": "observed",
+      "observation_scope": "Three applied auto-load result steps in each new/full-thread trace; none in the partial continuation",
+      "stream_timing": "start",
+      "semantics": "Server/product context-loading results emitted before inference, with no captured model decision boundary.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "Do not emit as tool_use or tool_result. Preserve as private sidecar/context provenance only.",
+      "openai_analogue": "Do not emit as function_call or function_call_output.",
+      "buffering_requirement": "No downstream tool event should be generated.",
+      "evidence": [
+        "auto NDJSON[2..4]",
+        "no-thinking NDJSON[2..4]",
+        "medium trace has no agent-tool-result"
+      ]
+    },
+    {
+      "id": "tools.native_call_delta",
+      "category": "tools",
+      "source_field": "model tool-call decision and streamed arguments",
+      "observation_status": "not_observed",
+      "observation_scope": "No native tool-call content block or argument delta in any of the 7 distinct transactions",
+      "stream_timing": "not_observed",
+      "semantics": "The captures cannot establish model-requested tool invocation, call IDs, argument assembly, or tool stop behavior.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "Cannot emit tool_use/input_json_delta or stop_reason=tool_use.",
+      "openai_analogue": "Cannot emit function_call items or response.function_call_arguments.delta.",
+      "buffering_requirement": "Not safely mappable without a genuine model-tool trace.",
+      "evidence": [
+        "All distinct inference NDJSON event and content-block schemas"
+      ]
+    },
+    {
+      "id": "tools.request_schemas",
+      "category": "tools",
+      "source_field": "tool definitions with descriptions and JSON input schemas",
+      "observation_status": "not_observed",
+      "observation_scope": "Request flags and connector names exist, but executable tool schemas do not",
+      "stream_timing": "not_observed",
+      "semantics": "Feature flags and connector labels are insufficient to reconstruct provider tool contracts.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "Cannot build top-level tools[] faithfully.",
+      "openai_analogue": "Cannot build tools/function definitions faithfully.",
+      "buffering_requirement": "External tool registry required.",
+      "evidence": [
+        "All sanitized runInferenceTranscript request schemas",
+        "anthropic-sse-compatibility.md: Request/history mapping"
+      ]
+    },
+    {
+      "id": "reasoning.request_effort",
+      "category": "reasoning",
+      "source_field": "config.reasoningEffort / updated-config.reasoningEffort",
+      "observation_status": "observed",
+      "observation_scope": "The legacy requests include medium, none, and an omitted value; one latest updated-config request carries a policy value but fails before inference",
+      "stream_timing": "request",
+      "semantics": "Notion-side reasoning policy selection; equivalence to any provider budget is unverified.",
+      "semantics_confidence": "high for selected enum; low for provider semantics",
+      "anthropic_mapping": "Policy-only translation to a target model's supported thinking configuration; never a direct numeric budget inference.",
+      "openai_analogue": "Policy-only translation to a target model's supported reasoning effort.",
+      "buffering_requirement": "No buffering; explicit adapter policy required.",
+      "evidence": [
+        "medium sanitized request updated-config",
+        "no-thinking sanitized request config",
+        "auto request omits reasoningEffort"
+      ]
+    },
+    {
+      "id": "reasoning.content",
+      "category": "reasoning",
+      "source_field": "thinking/reasoning content block or delta",
+      "observation_status": "not_observed",
+      "observation_scope": "Every one of the 5 successful inference values contains only a text block; the 2 quota failures contain no inference value",
+      "stream_timing": "not_observed",
+      "semantics": "No reasoning/thinking content or signature is exposed in the captured response schema; upstream hidden reasoning cannot be assessed from these fields.",
+      "semantics_confidence": "high for capture absence; no conclusion about unexposed provider reasoning",
+      "anthropic_mapping": "Do not emit thinking_delta, signature_delta, or thinking blocks.",
+      "openai_analogue": "Do not emit reasoning items or reasoning-summary deltas.",
+      "buffering_requirement": "Buffering cannot recover absent reasoning content.",
+      "evidence": [
+        "Initial and terminal inference block schemas in all distinct traces"
+      ]
+    },
+    {
+      "id": "reasoning.token_count",
+      "category": "reasoning",
+      "source_field": "reasoning/thinking token count",
+      "observation_status": "not_observed",
+      "observation_scope": "Absent from terminal inference metadata and usage summaries for all 5 successes; the 2 quota failures contain no model usage",
+      "stream_timing": "not_observed",
+      "semantics": "OutputTokens cannot be partitioned into visible and reasoning tokens from these captures.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "No thinking-token accounting can be emitted.",
+      "openai_analogue": "No output_tokens_details.reasoning_tokens value can be recovered.",
+      "buffering_requirement": "Not safely mappable.",
+      "evidence": [
+        "Terminal inference field sets in all distinct traces"
+      ]
+    },
+    {
+      "id": "continuation.flags",
+      "category": "continuation",
+      "source_field": "threadId, createThread, isPartialTranscript",
+      "observation_status": "observed",
+      "observation_scope": "2 legacy new/full-thread transactions and 5 distinct partial transactions; the latest HAR entries overlap hook targets 2–4",
+      "stream_timing": "request",
+      "semantics": "Notion session/thread routing and declaration that a request transcript is partial.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "Side metadata only. Anthropic Messages requires the adapter to supply message history.",
+      "openai_analogue": "Not equivalent to previous_response_id or a Conversations item without an adapter-owned mapping and ledger.",
+      "buffering_requirement": "External session ledger required for portable continuation.",
+      "evidence": [
+        "request_flags in trace_timing"
+      ]
+    },
+    {
+      "id": "continuation.full_history",
+      "category": "continuation",
+      "source_field": "complete prior message/tool history",
+      "observation_status": "not_observed",
+      "observation_scope": "The partial request carries config, context, updated-config, and the new user step, not a complete prior transcript",
+      "stream_timing": "not_observed",
+      "semantics": "A standalone continuation capture cannot reconstruct the stateless provider input that Notion assembled server-side.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "Cannot construct a faithful messages[] history from the partial request alone.",
+      "openai_analogue": "Cannot reconstruct input history or safely mint previous_response_id from the capture alone.",
+      "buffering_requirement": "Adapter-owned ledger from the first turn is required.",
+      "evidence": [
+        "medium sanitized request transcript types",
+        "anthropic-sse-compatibility.md: Continuation and history reconstruction"
+      ]
+    },
+    {
+      "id": "continuation.provider_handle",
+      "category": "continuation",
+      "source_field": "provider-native previous response/conversation handle",
+      "observation_status": "not_observed",
+      "observation_scope": "No Anthropic or OpenAI provider response handle is present",
+      "stream_timing": "not_observed",
+      "semantics": "Notion thread identity cannot be assumed to be a provider conversation identity.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "No standard provider handle exists in Messages; resend ledger history.",
+      "openai_analogue": "previous_response_id requires an adapter-owned mapping to an actual OpenAI response, which the capture does not supply.",
+      "buffering_requirement": "External mapping/ledger required.",
+      "evidence": [
+        "All sanitized request and response field schemas"
+      ]
+    },
+    {
+      "id": "beta.message_context_management",
+      "category": "compaction",
+      "source_field": "BetaMessage.context_management",
+      "observation_status": "not_observed",
+      "observation_scope": "No Anthropic beta context-management response exists in captured Notion messages",
+      "stream_timing": "message_start",
+      "semantics": "SDK 0.121.0 beta messages require nullable context_management describing strategies applied during the request.",
+      "semantics_confidence": "high for target contract; high for capture absence",
+      "anthropic_mapping": "Do not infer it from Notion patch state or token totals; emit target-supplied state only.",
+      "openai_analogue": "No direct captured analogue.",
+      "buffering_requirement": "Buffering cannot recover missing target context-management state.",
+      "evidence": [
+        "All captured Notion message and inference field schemas",
+        "Anthropic SDK 0.121.0 BetaMessage type"
+      ]
+    },
+    {
+      "id": "beta.message_diagnostics",
+      "category": "compaction",
+      "source_field": "BetaMessage.diagnostics",
+      "observation_status": "not_observed",
+      "observation_scope": "No Anthropic beta diagnostics envelope exists in captured Notion messages",
+      "stream_timing": "message_start",
+      "semantics": "SDK 0.121.0 beta messages require nullable diagnostics when using the beta response shape.",
+      "semantics_confidence": "high for target contract; high for capture absence",
+      "anthropic_mapping": "Do not fabricate diagnostics or reinterpret Notion telemetry as this target envelope.",
+      "openai_analogue": "No direct captured analogue.",
+      "buffering_requirement": "Not recoverable from these captures.",
+      "evidence": [
+        "All captured Notion message and inference field schemas",
+        "Anthropic SDK 0.121.0 BetaMessage type"
+      ]
+    },
+    {
+      "id": "beta.delta_context_management",
+      "category": "compaction",
+      "source_field": "BetaRawMessageDeltaEvent.context_management",
+      "observation_status": "not_observed",
+      "observation_scope": "No top-level context-management terminal field exists in captured Notion NDJSON",
+      "stream_timing": "terminal",
+      "semantics": "The SDK 0.121.0 beta message_delta event carries nullable context_management at event top level, separate from delta stop/container fields.",
+      "semantics_confidence": "high for target contract; high for capture absence",
+      "anthropic_mapping": "Emit only target-supplied state; patch-sync is not an equivalent.",
+      "openai_analogue": "No direct captured analogue.",
+      "buffering_requirement": "Buffering cannot derive it.",
+      "evidence": [
+        "All captured NDJSON terminal field schemas",
+        "Anthropic SDK 0.121.0 BetaRawMessageDeltaEvent type"
+      ]
+    },
+    {
+      "id": "beta.usage_fallback_credit",
+      "category": "token_accounting",
+      "source_field": "BetaUsage.fallback_credit and BetaMessageDeltaUsage.fallback_credit",
+      "observation_status": "not_observed",
+      "observation_scope": "No fallback-credit outcome exists in inference metadata or usage summaries inspected",
+      "stream_timing": "start_and_terminal",
+      "semantics": "SDK 0.121.0 beta start and delta usage add nullable fallback_credit; it is not a cache counter.",
+      "semantics_confidence": "high for target contract; high for capture absence",
+      "anthropic_mapping": "Leave absent outside the beta contract and never synthesize a non-null outcome from Notion cache fields.",
+      "openai_analogue": "No direct captured analogue.",
+      "buffering_requirement": "Not recoverable from these captures.",
+      "evidence": [
+        "Terminal inference and record-map usage field audits",
+        "Anthropic SDK 0.121.0 BetaUsage and BetaMessageDeltaUsage types"
+      ]
+    },
+    {
+      "id": "compaction.request_control",
+      "category": "compaction",
+      "source_field": "anthropic-beta: compact-2026-01-12; context_management.edits[].type=compact_20260112",
+      "observation_status": "not_observed",
+      "observation_scope": "No Anthropic compaction beta header or context_management edit appears in any captured Notion request",
+      "stream_timing": "request",
+      "semantics": "Native Anthropic compaction is a versioned beta request policy. The edit can include instructions, pause_after_compaction, and an input-token trigger. The documented default trigger is 150000 input tokens and the minimum configurable trigger is 50000.",
+      "semantics_confidence": "high for the target contract; high for capture absence",
+      "anthropic_mapping": "Cannot be reconstructed from Notion flags or terminal token totals. An adapter may add this only as an explicit target-side policy with the required beta opt-in and an owned conversation ledger.",
+      "openai_analogue": "No equivalent control is established by these captures; use a separate target-specific context-management policy.",
+      "buffering_requirement": "Persistent external ledger, target-model token accounting, and explicit target API configuration required.",
+      "evidence": [
+        "All sanitized runInferenceTranscript request schemas",
+        "anthropic-sse-compatibility.md: Anthropic compaction contract"
+      ]
+    },
+    {
+      "id": "compaction.content_block",
+      "category": "compaction",
+      "source_field": "content block type=compaction with nullable content and nullable encrypted_content",
+      "observation_status": "not_observed",
+      "observation_scope": "Every one of the 5 captured successful Notion inferences contains only a text block; the 2 quota outcomes contain no inference",
+      "stream_timing": "not_observed",
+      "semantics": "Anthropic native compaction returns a summary content block plus optional opaque encrypted state. Either field may be null; any non-null encrypted_content must be preserved and round-tripped verbatim.",
+      "semantics_confidence": "high for the target contract; high for capture absence",
+      "anthropic_mapping": "Do not fabricate a compaction block from Notion text, thread summaries, or usage totals. If an adapter receives a genuine block, preserve non-null encrypted_content byte-for-byte/string-for-string in subsequent requests.",
+      "openai_analogue": "No direct captured analogue; preserve as target-specific ledger state rather than converting it to ordinary assistant text.",
+      "buffering_requirement": "Exact persistent storage is required for any non-null encrypted_content; lossy normalization is forbidden.",
+      "evidence": [
+        "Initial and terminal inference block schemas in all distinct traces",
+        "anthropic-sse-compatibility.md: Anthropic compaction contract"
+      ]
+    },
+    {
+      "id": "compaction.delta",
+      "category": "compaction",
+      "source_field": "content_block_delta.delta.type=compaction_delta",
+      "observation_status": "not_observed",
+      "observation_scope": "No compaction block lifecycle or compaction_delta exists in captured Notion NDJSON",
+      "stream_timing": "not_observed",
+      "semantics": "Anthropic streams compaction through the ordinary content-block lifecycle and can carry the complete summary and opaque state in a compaction_delta.",
+      "semantics_confidence": "high for the target contract; high for capture absence",
+      "anthropic_mapping": "Cannot be emitted from the observed x-operation text extensions. It requires a genuine compaction block/delta from the target API or an explicitly separate adapter compactor representation.",
+      "openai_analogue": "No direct captured analogue.",
+      "buffering_requirement": "Preserve the full delta and any non-null encrypted state exactly before continuing the ledger.",
+      "evidence": [
+        "All captured NDJSON event and content-block schemas",
+        "anthropic-sse-compatibility.md: Anthropic compaction contract"
+      ]
+    },
+    {
+      "id": "compaction.stop_reason",
+      "category": "compaction",
+      "source_field": "message_delta.delta.stop_reason=compaction",
+      "observation_status": "not_observed",
+      "observation_scope": "No model stop reason of any kind is captured; Notion completion telemetry only reports product-level completion",
+      "stream_timing": "not_observed",
+      "semantics": "An Anthropic pause-after-compaction flow can stop with reason compaction so the client can resume with the returned compaction state.",
+      "semantics_confidence": "high for the target contract; high for capture absence",
+      "anthropic_mapping": "Do not map Notion patch-sync or terminal_reason=completed to stop_reason=compaction. Emit it only when a genuine target compaction flow supplies it.",
+      "openai_analogue": "No direct captured finish_reason analogue.",
+      "buffering_requirement": "Missing semantics cannot be recovered by buffering.",
+      "evidence": [
+        "completion.stop_reason row",
+        "anthropic-sse-compatibility.md: Anthropic compaction contract"
+      ]
+    },
+    {
+      "id": "compaction.usage_iterations",
+      "category": "compaction",
+      "source_field": "BetaUsage.iterations and BetaMessageDeltaUsage.iterations; entries have type=message or compaction",
+      "observation_status": "not_observed",
+      "observation_scope": "No per-iteration accounting appears in Notion inference metadata or returned usage summaries",
+      "stream_timing": "not_observed",
+      "semantics": "Anthropic beta usage separates message-sampling and compaction iterations. Compaction iteration cost is separate from the context size it closed and is excluded from top-level usage totals.",
+      "semantics_confidence": "high for the target contract; high for capture absence",
+      "anthropic_mapping": "Notion input/output/cache totals cannot be partitioned into message and compaction iterations. Leave usage.iterations absent rather than inventing entries.",
+      "openai_analogue": "No direct captured per-compaction-iteration accounting analogue.",
+      "buffering_requirement": "Buffering does not recover missing iteration boundaries or costs.",
+      "evidence": [
+        "Terminal inference and record-map usage field audits",
+        "anthropic-sse-compatibility.md: Anthropic compaction contract"
+      ]
+    },
+    {
+      "id": "compaction.event",
+      "category": "compaction",
+      "source_field": "context compaction, summarization, or truncation event",
+      "observation_status": "not_observed",
+      "observation_scope": "No explicit event or field in any of the 7 distinct captured requests or response bodies",
+      "stream_timing": "not_observed",
+      "semantics": "The captures do not establish that compaction occurred, what was removed, or what summary replaced it.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "Do not fabricate compacted history or summaries.",
+      "openai_analogue": "Do not claim a compaction/context-management event.",
+      "buffering_requirement": "Not recoverable from the standalone captures.",
+      "evidence": [
+        "All 6 sanitized HAR field audits plus the 4-target hook schema"
+      ]
+    },
+    {
+      "id": "compaction.adapter_constraint",
+      "category": "compaction",
+      "source_field": "adapter-owned canonical conversation ledger",
+      "observation_status": "derived_constraint",
+      "observation_scope": "Required because partial continuation omits full history and target-token semantics differ",
+      "stream_timing": "not_observed",
+      "semantics": "For an adapter limited to these captured artifacts, safe compaction is a new adapter feature, not a lossless conversion of the captured Notion request. Other Notion live states may expose native summary/compaction steps.",
+      "semantics_confidence": "high",
+      "anthropic_mapping": "Maintain history from turn one, tokenize for the target model, preserve unresolved tool pairs and constraints, and summarize only with provenance.",
+      "openai_analogue": "The same external-ledger requirement applies unless the adapter owns actual provider response/conversation handles.",
+      "buffering_requirement": "Persistent external ledger and target-model tokenization required.",
+      "evidence": [
+        "continuation.full_history row",
+        "anthropic-sse-compatibility.md: Agent context compaction"
+      ]
+    }
+  ],
+  "agent_cli_viability": {
+    "text_stream_cli": "viable with adapter-defined identity and stop policy, plus usage labeled as Notion telemetry",
+    "general_anthropic_agent_from_standalone_capture": "not viable because native stop causes, model tool decisions and pairings, thinking signatures, redacted blocks, complete history, container state, and compaction continuity are missing",
+    "stateful_terminating_gateway": "conditionally viable only when it owns the canonical ledger from turn one, preserves all target-native opaque state exactly, and introduces any summary or compaction as explicit new behavior"
+  },
+  "transparent_proxy_verdict": {
+    "stateless_ndjson_to_sse_text_projection": "viable for the observed text stream",
+    "stateless_continuation": "not viable",
+    "stateless_transparent_compaction": "not viable",
+    "reason": "Wire reframing and buffering do not recover missing history, tool/signature state, stop causes, opaque compaction blocks, or iteration usage.",
+    "only_viable_compaction_architecture": "A stateful terminating gateway that owns the complete ledger, tokenizes for the target model, preserves opaque state, and deliberately creates new target-side compaction semantics."
+  },
+  "adapter_conclusions": [
+    "A low-latency text-only projection is possible from the initial agent-inference block and x-operation content extensions.",
+    "A projection with the observed final model alias and accurate Notion-reported input/cache metadata in its first downstream event must buffer the complete Notion stream and replay it.",
+    "For Anthropic TypeScript SDK 0.121.0 clients, a live projection can correct cumulative input/cache/output usage in terminal MessageDeltaUsage and achieve accurate final accumulated Notion-reported usage; message_start remains placeholder/inaccurate and the final model alias cannot be corrected.",
+    "outputTokens can be emitted terminally as a cumulative count; no per-delta usage exists.",
+    "Successful completion is observable, but no captured field identifies the model's stop cause. Any downstream stop_reason or finish_reason is adapter policy.",
+    "Auto-load agent-tool-result steps are not evidence of model tool calls and must not be converted into native tool-use events.",
+    "Native Anthropic compaction request controls, content blocks, deltas, stop reason, and usage iterations are absent from the five successful streams and two quota outcomes and cannot be reconstructed from completion or token telemetry; broader Notion behavior is untested.",
+    "Any non-null encrypted_content received from a genuine Anthropic compaction flow must be persisted and round-tripped verbatim.",
+    "Projecting the captured partial continuation or adding compaction from these artifacts requires an adapter-owned canonical ledger; threadId alone is insufficient for that conversion.",
+    "Two live HTTP-200 application-level quota failures must be rejected as downstream errors without synthetic success; their Anthropic subtype, downstream HTTP status, retryability, and partial-stream policy remain adapter decisions.",
+    "Top-level stream-error, non-200 transport-failure, and abort branches are present in browser code but remain unvalidated by live captures."
+  ]
+}

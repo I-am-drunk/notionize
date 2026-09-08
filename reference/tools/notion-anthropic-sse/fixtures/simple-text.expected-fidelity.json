@@ -1,0 +1,22 @@
+{
+  "anthropic_sdk_shape_version": "0.121.0",
+  "anthropic_shaped_not_provider_authentic": true,
+  "buffered_until_patch_sync": true,
+  "cache_usage_semantics_verified": false,
+  "explicit_nulls_for_unobserved_contract_fields": true,
+  "input_usage_retimed_to_message_start": true,
+  "lossless_round_trip": false,
+  "model_identifier_is_notion_alias": true,
+  "stop_reason_value": "end_turn",
+  "supports_compaction": false,
+  "supports_errors": false,
+  "supports_signatures": false,
+  "supports_thinking": false,
+  "supports_tools": false,
+  "synthetic_stop_reason": true,
+  "terminal_only_input_usage": true,
+  "terminal_usage_is_cumulative": true,
+  "terminal_usage_reemitted_for_sdk_correction": true,
+  "text_only": true,
+  "usage_is_notion_reported": true
+}

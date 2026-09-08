@@ -1,0 +1,15 @@
+# systemd user unit. Enable with: systemctl --user enable --now notionize
+# (mirrors Tailscale's `systemctl enable --now tailscaled`). Persistent state lives in
+# ~/.notionize so reboots reconnect without re-login.
+[Unit]
+Description=Notionize daemon
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=%h/.cargo/bin/notionize up
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

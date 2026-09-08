@@ -1,0 +1,16 @@
+[package]
+name = "notion-api"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+notion-core = { path = "../notion-core" }
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "cookies", "json", "stream", "gzip", "zstd"] }
+serde.workspace = true
+serde_json.workspace = true
+async-trait.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+tokio.workspace = true

@@ -1,0 +1,461 @@
+{
+  "schema_artifact_version": 1,
+  "source": {
+    "filename": "notionize-live-2026-08-27T02-55-16.407Z.json",
+    "sha256": "49ee9a3300bf7ab51bf9f0f67d14cd2a0dbbf6eeacf4ae70ae82387734b7ef98",
+    "bytes": 343499,
+    "raw_file_mode": "600"
+  },
+  "privacy_boundary": {
+    "schema_only": true,
+    "arbitrary_string_values_emitted": false,
+    "numeric_payload_values_emitted": false,
+    "urls_emitted": false,
+    "identifiers_emitted": false,
+    "headers_or_cookies_emitted": false,
+    "request_or_response_body_text_emitted": false,
+    "structural_enum_values_are_allowlisted": true
+  },
+  "capture_schema": {
+    "top_level_type": "object",
+    "top_level_fields": [
+      {
+        "field": "schemaVersion",
+        "value_type": "number"
+      },
+      {
+        "field": "currentSessionId",
+        "value_type": "string"
+      },
+      {
+        "field": "database",
+        "value_type": "string"
+      },
+      {
+        "field": "exportedAt",
+        "value_type": "string"
+      },
+      {
+        "field": "events",
+        "value_type": "array"
+      }
+    ],
+    "event_count": 98,
+    "phases": {
+      "hook-installed": {
+        "event_count": 1,
+        "target_event_count": 0,
+        "with_url_count": 0,
+        "with_body_text_count": 0,
+        "with_bytes_count": 0,
+        "with_context_config_count": 1
+      },
+      "request": {
+        "event_count": 25,
+        "target_event_count": 1,
+        "with_url_count": 25,
+        "with_body_text_count": 21,
+        "with_bytes_count": 0,
+        "with_context_config_count": 1
+      },
+      "response-chunk": {
+        "event_count": 26,
+        "target_event_count": 6,
+        "with_url_count": 0,
+        "with_body_text_count": 0,
+        "with_bytes_count": 26,
+        "with_context_config_count": 0
+      },
+      "response-end": {
+        "event_count": 21,
+        "target_event_count": 1,
+        "with_url_count": 0,
+        "with_body_text_count": 0,
+        "with_bytes_count": 0,
+        "with_context_config_count": 0
+      },
+      "response-start": {
+        "event_count": 25,
+        "target_event_count": 1,
+        "with_url_count": 25,
+        "with_body_text_count": 0,
+        "with_bytes_count": 0,
+        "with_context_config_count": 0
+      }
+    }
+  },
+  "target_transaction": {
+    "endpoint_class": "runInferenceTranscript",
+    "event_count": 9,
+    "request_count": 1,
+    "response_start_count": 1,
+    "response_chunk_count": 6,
+    "response_end_count": 1,
+    "request": {
+      "body_json_parsed": true,
+      "transcript_entry_count": 4,
+      "transcript_type_counts": {
+        "__OTHER_TRANSCRIPT_TYPE__": 2,
+        "config": 1,
+        "user": 1
+      },
+      "transcript_order": [
+        {
+          "index": 0,
+          "type": "config",
+          "value_type": "object"
+        },
+        {
+          "index": 1,
+          "type": "__OTHER_TRANSCRIPT_TYPE__",
+          "value_type": "object"
+        },
+        {
+          "index": 2,
+          "type": "__OTHER_TRANSCRIPT_TYPE__",
+          "value_type": "object"
+        },
+        {
+          "index": 3,
+          "type": "user",
+          "value_type": "array"
+        }
+      ]
+    },
+    "response": {
+      "content_type_class": "application/x-ndjson",
+      "content_encoding_class": "none",
+      "captured_byte_count": 9948,
+      "decoded_byte_count": 9948,
+      "nonempty_line_count": 7,
+      "parsed_ndjson_event_count": 7,
+      "unparsed_line_count": 0,
+      "event_sequence": [
+        "patch-start",
+        "patch",
+        "patch",
+        "patch",
+        "patch",
+        "record-map",
+        "patch-sync"
+      ],
+      "event_type_counts": {
+        "patch": 4,
+        "patch-start": 1,
+        "patch-sync": 1,
+        "record-map": 1
+      },
+      "allowlisted_nested_type_counts": {
+        "agent-inference": 3,
+        "agent-turn-full-record-map": 3,
+        "config": 1,
+        "everything": 1,
+        "patch": 4,
+        "patch-start": 1,
+        "patch-sync": 1,
+        "record-map": 1,
+        "text": 3,
+        "workflow": 2
+      },
+      "record_map_thread_record_count": 1,
+      "record_map_thread_message_record_count": 3
+    }
+  },
+  "exact_marker_locations": {
+    "agent-transcript-summary": {
+      "url_event_count": 0,
+      "request_body_event_count": 0,
+      "decoded_chunk_event_count": 0,
+      "target_response_occurrences": 0
+    },
+    "activate-transcript-compaction": {
+      "url_event_count": 0,
+      "request_body_event_count": 0,
+      "decoded_chunk_event_count": 0,
+      "target_response_occurrences": 0
+    },
+    "summary-inference": {
+      "url_event_count": 0,
+      "request_body_event_count": 0,
+      "decoded_chunk_event_count": 0,
+      "target_response_occurrences": 0
+    },
+    "runInferenceTranscript": {
+      "url_event_count": 2,
+      "request_body_event_count": 0,
+      "decoded_chunk_event_count": 0,
+      "target_response_occurrences": 0
+    }
+  },
+  "relevant_field_schema": [
+    {
+      "scope": "capture_event",
+      "field": "compactThreshold",
+      "occurrences": 2,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "capture_event",
+      "field": "contextConfig",
+      "occurrences": 26,
+      "value_types": [
+        "null",
+        "object"
+      ]
+    },
+    {
+      "scope": "capture_event",
+      "field": "createSummaryThreshold",
+      "occurrences": 2,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "capture_event",
+      "field": "updateSummaryInterval",
+      "occurrences": 2,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "request_body",
+      "field": "compactThreshold",
+      "occurrences": 1,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "request_body",
+      "field": "contextManagementConfiguration",
+      "occurrences": 1,
+      "value_types": [
+        "object"
+      ]
+    },
+    {
+      "scope": "request_body",
+      "field": "createSummaryThreshold",
+      "occurrences": 1,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "request_body",
+      "field": "enableUserSessionContext",
+      "occurrences": 1,
+      "value_types": [
+        "boolean"
+      ]
+    },
+    {
+      "scope": "request_body",
+      "field": "updateSummaryInterval",
+      "occurrences": 1,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "request_body",
+      "field": "useContextualCoreDocsAutoLoad",
+      "occurrences": 1,
+      "value_types": [
+        "boolean"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "agent_inference_count",
+      "occurrences": 1,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "basic_ai_credits",
+      "occurrences": 1,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "cached_input_tokens_created",
+      "occurrences": 1,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "cached_input_tokens_read",
+      "occurrences": 1,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "cachedTokensCreated",
+      "occurrences": 2,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "cachedTokensRead",
+      "occurrences": 2,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "completion_count",
+      "occurrences": 1,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "credits_by_type_unit",
+      "occurrences": 1,
+      "value_types": [
+        "object"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "enableUserSessionContext",
+      "occurrences": 1,
+      "value_types": [
+        "boolean"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "exempt_ai_credits",
+      "occurrences": 1,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "input_tokens",
+      "occurrences": 1,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "inputTokens",
+      "occurrences": 2,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "maxContextTokens",
+      "occurrences": 2,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "maxInputTokens",
+      "occurrences": 2,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "output_tokens",
+      "occurrences": 1,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "outputTokens",
+      "occurrences": 2,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "premium_ai_credits",
+      "occurrences": 1,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "preview_ai_credits",
+      "occurrences": 1,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "serverPostSubmitTimeToFirstTokenMs",
+      "occurrences": 2,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "serverTimeToFirstTokenMs",
+      "occurrences": 2,
+      "value_types": [
+        "number"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "usage_summary",
+      "occurrences": 1,
+      "value_types": [
+        "object"
+      ]
+    },
+    {
+      "scope": "response_ndjson",
+      "field": "useContextualCoreDocsAutoLoad",
+      "occurrences": 1,
+      "value_types": [
+        "boolean"
+      ]
+    }
+  ],
+  "evidence_verdicts": {
+    "compaction_configuration_fields_observed": true,
+    "agent_transcript_summary_observed": false,
+    "activate_transcript_compaction_observed": false,
+    "summary_inference_observed": false,
+    "activation_mode_field_observed": false,
+    "compaction_step_type_observed": false,
+    "before_after_compaction_pair_observed": false,
+    "inference_token_fields_observed": true,
+    "cumulative_usage_summary_observed": true,
+    "compaction_behavior_verdict": "configuration observed; runtime compaction not observed"
+  }
+}

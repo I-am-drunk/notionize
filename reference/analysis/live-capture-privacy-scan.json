@@ -1,0 +1,27 @@
+{
+  "scan_version": 1,
+  "artifact": "notionize-live-2026-08-27T02-55-16.407Z.schema.json",
+  "artifact_sha256": "6609c273c47c1e97498194ac6c8a00ed983025c56a62e9f379bf8a5731bf805e",
+  "artifact_bytes": 10559,
+  "pattern_hits": {
+    "absolute_user_path": 0,
+    "url": 0,
+    "uuid": 0,
+    "compact_identifier": 0,
+    "email": 0,
+    "jwt": 0,
+    "bearer_value": 0,
+    "notion_token": 0
+  },
+  "structural_assertions": {
+    "schema_only": true,
+    "raw_capture_mode_0600": true,
+    "arbitrary_string_values_omitted": true,
+    "numeric_payload_values_omitted": true,
+    "urls_omitted": true,
+    "identifiers_omitted": true,
+    "headers_and_cookies_omitted": true,
+    "body_text_omitted": true
+  },
+  "passed": true
+}

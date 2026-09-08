@@ -1,0 +1,1460 @@
+{
+  "schema_artifact_version": 2,
+  "source": {
+    "filename": "notionize-live-2026-08-27T03-50-19.759Z.json",
+    "sha256": "08cb89698d7a84f27adb61ac581c9083e73fec80856c7c1142bdd0140b1ea16e",
+    "bytes": 2854497,
+    "raw_file_mode": "600"
+  },
+  "privacy_boundary": {
+    "schema_only": true,
+    "arbitrary_string_values_emitted": false,
+    "urls_emitted": false,
+    "identifiers_emitted": false,
+    "headers_or_cookies_emitted": false,
+    "request_or_response_body_text_emitted": false,
+    "structural_enum_values_are_allowlisted": true,
+    "allowlisted_numeric_usage_and_threshold_values_emitted": true,
+    "arbitrary_model_aliases_emitted": false
+  },
+  "capture_schema": {
+    "event_count": 584,
+    "phase_counts": {
+      "fetch-error": {
+        "event_count": 7,
+        "target_event_count": 0,
+        "with_url_count": 0,
+        "with_body_text_count": 0,
+        "with_bytes_count": 0,
+        "with_context_config_count": 0
+      },
+      "hook-installed": {
+        "event_count": 2,
+        "target_event_count": 0,
+        "with_url_count": 0,
+        "with_body_text_count": 0,
+        "with_bytes_count": 0,
+        "with_context_config_count": 2
+      },
+      "request": {
+        "event_count": 182,
+        "target_event_count": 4,
+        "with_url_count": 182,
+        "with_body_text_count": 142,
+        "with_bytes_count": 0,
+        "with_context_config_count": 4
+      },
+      "response-chunk": {
+        "event_count": 129,
+        "target_event_count": 17,
+        "with_url_count": 0,
+        "with_body_text_count": 0,
+        "with_bytes_count": 129,
+        "with_context_config_count": 0
+      },
+      "response-end": {
+        "event_count": 113,
+        "target_event_count": 4,
+        "with_url_count": 0,
+        "with_body_text_count": 0,
+        "with_bytes_count": 0,
+        "with_context_config_count": 0
+      },
+      "response-start": {
+        "event_count": 151,
+        "target_event_count": 4,
+        "with_url_count": 151,
+        "with_body_text_count": 0,
+        "with_bytes_count": 0,
+        "with_context_config_count": 0
+      }
+    },
+    "sessions": [
+      {
+        "ordinal": 1,
+        "event_count": 138,
+        "target_request_count": 1
+      },
+      {
+        "ordinal": 2,
+        "event_count": 446,
+        "target_request_count": 3
+      }
+    ]
+  },
+  "target_transactions": [
+    {
+      "ordinal": 1,
+      "session_ordinal": 1,
+      "endpoint_class": "runInferenceTranscript",
+      "request": {
+        "body_json_parsed": true,
+        "body_bytes": 3959,
+        "body_rewritten": true,
+        "create_thread": false,
+        "is_partial_transcript": true,
+        "transcript_entry_count": 4,
+        "transcript_type_counts": {
+          "config": 1,
+          "context": 2,
+          "user": 1
+        },
+        "transcript_order": [
+          {
+            "index": 0,
+            "type": "config",
+            "value_type": "object"
+          },
+          {
+            "index": 1,
+            "type": "context",
+            "value_type": "object"
+          },
+          {
+            "index": 2,
+            "type": "context",
+            "value_type": "object"
+          },
+          {
+            "index": 3,
+            "type": "user",
+            "value_type": "array"
+          }
+        ],
+        "user_payload_string_statistics": {
+          "string_count": 1,
+          "total_characters": 86,
+          "maximum_string_characters": 86
+        },
+        "effective_context_management_configuration": {
+          "recentSearchToolResultsToKeep": -1,
+          "compactThreshold": 0.02,
+          "createSummaryThreshold": 0.01,
+          "updateSummaryInterval": 0.005
+        }
+      },
+      "response": {
+        "outcome_class": "success",
+        "http_statuses": [
+          200
+        ],
+        "response_header_content_type_class": "application/x-ndjson",
+        "response_header_content_encoding_class": "zstd",
+        "captured_body_state": "decoded-fetch-response-stream",
+        "response_start_count": 1,
+        "response_end_count": 1,
+        "captured_chunk_count": 6,
+        "captured_byte_count": 9948,
+        "parsed_ndjson_event_count": 7,
+        "unparsed_line_count": 0,
+        "event_sequence": [
+          "patch-start",
+          "patch",
+          "patch",
+          "patch",
+          "patch",
+          "record-map",
+          "patch-sync"
+        ],
+        "event_type_counts": {
+          "patch": 4,
+          "patch-start": 1,
+          "patch-sync": 1,
+          "record-map": 1
+        },
+        "allowlisted_nested_type_counts": {
+          "agent-inference": 3,
+          "agent-turn-full-record-map": 3,
+          "config": 1,
+          "everything": 1,
+          "patch": 4,
+          "patch-start": 1,
+          "patch-sync": 1,
+          "record-map": 1,
+          "text": 3,
+          "workflow": 2
+        },
+        "allowlisted_status_counts": {
+          "completed": 6
+        },
+        "exact_marker_counts": {
+          "agent-transcript-summary": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "activate-transcript-compaction": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "summary-inference": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "summarize-transcript": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "summarize-transcript-error": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "premium-feature-unavailable": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "error": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          }
+        },
+        "model_calls": [
+          {
+            "ordinal": 1,
+            "step_type": "agent-inference",
+            "model_present": true,
+            "usage": {
+              "inputTokens": 29911,
+              "outputTokens": 18,
+              "cachedTokensRead": 29580,
+              "cachedTokensCreated": 12484,
+              "maxContextTokens": 200000,
+              "maxInputTokens": 160000
+            },
+            "finished_at_present": true,
+            "previous_attempt_count": null,
+            "output_block_type_counts": {
+              "text": 1
+            }
+          }
+        ],
+        "has_terminal_patch_sync": true,
+        "capture_integrity": {
+          "chunk_indexes_contiguous": true,
+          "chunk_byte_lengths_match": true,
+          "response_end_chunk_count_matches": true,
+          "response_end_total_bytes_matches": true
+        }
+      },
+      "relevant_field_schema": [
+        {
+          "scope": "request_body",
+          "field": "compactThreshold",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "contextManagementConfiguration",
+          "occurrences": 1,
+          "value_types": [
+            "object"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "createSummaryThreshold",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "model",
+          "occurrences": 1,
+          "value_types": [
+            "string"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "recentSearchToolResultsToKeep",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "type",
+          "occurrences": 6,
+          "value_types": [
+            "string"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "updateSummaryInterval",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "agent_inference_count",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "basic_ai_credits",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "cached_input_tokens_created",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "cached_input_tokens_read",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "cachedTokensCreated",
+          "occurrences": 2,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "cachedTokensRead",
+          "occurrences": 2,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "completion_count",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "credits_by_type_unit",
+          "occurrences": 1,
+          "value_types": [
+            "object"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "exempt_ai_credits",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "finishedAt",
+          "occurrences": 2,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "input_tokens",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "inputTokens",
+          "occurrences": 2,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "maxContextTokens",
+          "occurrences": 2,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "maxInputTokens",
+          "occurrences": 2,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "model",
+          "occurrences": 3,
+          "value_types": [
+            "string"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "output_tokens",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "outputTokens",
+          "occurrences": 2,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "premium_ai_credits",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "preview_ai_credits",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "previousAttemptValues",
+          "occurrences": 2,
+          "value_types": [
+            "array"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "type",
+          "occurrences": 20,
+          "value_types": [
+            "string"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "usage_summary",
+          "occurrences": 1,
+          "value_types": [
+            "object"
+          ]
+        }
+      ]
+    },
+    {
+      "ordinal": 2,
+      "session_ordinal": 2,
+      "endpoint_class": "runInferenceTranscript",
+      "request": {
+        "body_json_parsed": true,
+        "body_bytes": 37918,
+        "body_rewritten": true,
+        "create_thread": false,
+        "is_partial_transcript": true,
+        "transcript_entry_count": 4,
+        "transcript_type_counts": {
+          "config": 1,
+          "context": 2,
+          "user": 1
+        },
+        "transcript_order": [
+          {
+            "index": 0,
+            "type": "config",
+            "value_type": "object"
+          },
+          {
+            "index": 1,
+            "type": "context",
+            "value_type": "object"
+          },
+          {
+            "index": 2,
+            "type": "context",
+            "value_type": "object"
+          },
+          {
+            "index": 3,
+            "type": "user",
+            "value_type": "array"
+          }
+        ],
+        "user_payload_string_statistics": {
+          "string_count": 1,
+          "total_characters": 34045,
+          "maximum_string_characters": 34045
+        },
+        "effective_context_management_configuration": {
+          "recentSearchToolResultsToKeep": -1,
+          "compactThreshold": 0.02,
+          "createSummaryThreshold": 0.01,
+          "updateSummaryInterval": 0.005
+        }
+      },
+      "response": {
+        "outcome_class": "success",
+        "http_statuses": [
+          200
+        ],
+        "response_header_content_type_class": "application/x-ndjson",
+        "response_header_content_encoding_class": "zstd",
+        "captured_body_state": "decoded-fetch-response-stream",
+        "response_start_count": 1,
+        "response_end_count": 1,
+        "captured_chunk_count": 7,
+        "captured_byte_count": 10304,
+        "parsed_ndjson_event_count": 8,
+        "unparsed_line_count": 0,
+        "event_sequence": [
+          "patch-start",
+          "patch",
+          "patch",
+          "patch",
+          "patch",
+          "patch",
+          "record-map",
+          "patch-sync"
+        ],
+        "event_type_counts": {
+          "patch": 5,
+          "patch-start": 1,
+          "patch-sync": 1,
+          "record-map": 1
+        },
+        "allowlisted_nested_type_counts": {
+          "agent-inference": 3,
+          "agent-turn-full-record-map": 3,
+          "config": 1,
+          "everything": 1,
+          "patch": 5,
+          "patch-start": 1,
+          "patch-sync": 1,
+          "record-map": 1,
+          "text": 3,
+          "workflow": 2
+        },
+        "allowlisted_status_counts": {
+          "completed": 7
+        },
+        "exact_marker_counts": {
+          "agent-transcript-summary": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "activate-transcript-compaction": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "summary-inference": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "summarize-transcript": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "summarize-transcript-error": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "premium-feature-unavailable": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "error": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          }
+        },
+        "model_calls": [
+          {
+            "ordinal": 1,
+            "step_type": "agent-inference",
+            "model_present": true,
+            "usage": {
+              "inputTokens": 34685,
+              "outputTokens": 7,
+              "cachedTokensRead": 29580,
+              "cachedTokensCreated": 28949,
+              "maxContextTokens": 200000,
+              "maxInputTokens": 160000
+            },
+            "finished_at_present": true,
+            "previous_attempt_count": null,
+            "output_block_type_counts": {
+              "text": 1
+            }
+          }
+        ],
+        "has_terminal_patch_sync": true,
+        "capture_integrity": {
+          "chunk_indexes_contiguous": true,
+          "chunk_byte_lengths_match": true,
+          "response_end_chunk_count_matches": true,
+          "response_end_total_bytes_matches": true
+        }
+      },
+      "relevant_field_schema": [
+        {
+          "scope": "request_body",
+          "field": "compactThreshold",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "contextManagementConfiguration",
+          "occurrences": 1,
+          "value_types": [
+            "object"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "createSummaryThreshold",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "model",
+          "occurrences": 1,
+          "value_types": [
+            "string"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "recentSearchToolResultsToKeep",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "type",
+          "occurrences": 6,
+          "value_types": [
+            "string"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "updateSummaryInterval",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "agent_inference_count",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "basic_ai_credits",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "cached_input_tokens_created",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "cached_input_tokens_read",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "cachedTokensCreated",
+          "occurrences": 2,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "cachedTokensRead",
+          "occurrences": 2,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "completion_count",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "credits_by_type_unit",
+          "occurrences": 1,
+          "value_types": [
+            "object"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "exempt_ai_credits",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "finishedAt",
+          "occurrences": 2,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "input_tokens",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "inputTokens",
+          "occurrences": 2,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "maxContextTokens",
+          "occurrences": 2,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "maxInputTokens",
+          "occurrences": 2,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "model",
+          "occurrences": 3,
+          "value_types": [
+            "string"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "output_tokens",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "outputTokens",
+          "occurrences": 2,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "premium_ai_credits",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "preview_ai_credits",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "previousAttemptValues",
+          "occurrences": 2,
+          "value_types": [
+            "array"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "type",
+          "occurrences": 21,
+          "value_types": [
+            "string"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "usage_summary",
+          "occurrences": 1,
+          "value_types": [
+            "object"
+          ]
+        }
+      ]
+    },
+    {
+      "ordinal": 3,
+      "session_ordinal": 2,
+      "endpoint_class": "runInferenceTranscript",
+      "request": {
+        "body_json_parsed": true,
+        "body_bytes": 3962,
+        "body_rewritten": true,
+        "create_thread": false,
+        "is_partial_transcript": true,
+        "transcript_entry_count": 4,
+        "transcript_type_counts": {
+          "config": 1,
+          "context": 2,
+          "user": 1
+        },
+        "transcript_order": [
+          {
+            "index": 0,
+            "type": "config",
+            "value_type": "object"
+          },
+          {
+            "index": 1,
+            "type": "context",
+            "value_type": "object"
+          },
+          {
+            "index": 2,
+            "type": "context",
+            "value_type": "object"
+          },
+          {
+            "index": 3,
+            "type": "user",
+            "value_type": "array"
+          }
+        ],
+        "user_payload_string_statistics": {
+          "string_count": 1,
+          "total_characters": 89,
+          "maximum_string_characters": 89
+        },
+        "effective_context_management_configuration": {
+          "recentSearchToolResultsToKeep": -1,
+          "compactThreshold": 0.02,
+          "createSummaryThreshold": 0.01,
+          "updateSummaryInterval": 0.005
+        }
+      },
+      "response": {
+        "outcome_class": "application-level-quota-failure",
+        "http_statuses": [
+          200
+        ],
+        "response_header_content_type_class": "application/x-ndjson",
+        "response_header_content_encoding_class": "zstd",
+        "captured_body_state": "decoded-fetch-response-stream",
+        "response_start_count": 1,
+        "response_end_count": 1,
+        "captured_chunk_count": 2,
+        "captured_byte_count": 8282,
+        "parsed_ndjson_event_count": 2,
+        "unparsed_line_count": 0,
+        "event_sequence": [
+          "patch-start",
+          "record-map"
+        ],
+        "event_type_counts": {
+          "patch-start": 1,
+          "record-map": 1
+        },
+        "allowlisted_nested_type_counts": {
+          "config": 1,
+          "cumulative": 4,
+          "everything": 1,
+          "patch-start": 1,
+          "premium-feature-unavailable": 2,
+          "product": 2,
+          "record-map": 1,
+          "unavailable": 2,
+          "workflow": 2
+        },
+        "allowlisted_status_counts": {
+          "completed": 8
+        },
+        "exact_marker_counts": {
+          "agent-transcript-summary": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "activate-transcript-compaction": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "summary-inference": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "summarize-transcript": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "summarize-transcript-error": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "premium-feature-unavailable": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 2
+          },
+          "error": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          }
+        },
+        "model_calls": [],
+        "has_terminal_patch_sync": false,
+        "capture_integrity": {
+          "chunk_indexes_contiguous": true,
+          "chunk_byte_lengths_match": true,
+          "response_end_chunk_count_matches": true,
+          "response_end_total_bytes_matches": true
+        }
+      },
+      "relevant_field_schema": [
+        {
+          "scope": "request_body",
+          "field": "compactThreshold",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "contextManagementConfiguration",
+          "occurrences": 1,
+          "value_types": [
+            "object"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "createSummaryThreshold",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "model",
+          "occurrences": 1,
+          "value_types": [
+            "string"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "recentSearchToolResultsToKeep",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "type",
+          "occurrences": 6,
+          "value_types": [
+            "string"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "updateSummaryInterval",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "agent_inference_count",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "basic_ai_credits",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "cached_input_tokens_created",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "cached_input_tokens_read",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "completion_count",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "credits_by_type_unit",
+          "occurrences": 1,
+          "value_types": [
+            "object"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "exempt_ai_credits",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "input_tokens",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "model",
+          "occurrences": 1,
+          "value_types": [
+            "string"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "output_tokens",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "premium_ai_credits",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "preview_ai_credits",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "type",
+          "occurrences": 16,
+          "value_types": [
+            "string"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "usage_summary",
+          "occurrences": 1,
+          "value_types": [
+            "object"
+          ]
+        }
+      ]
+    },
+    {
+      "ordinal": 4,
+      "session_ordinal": 2,
+      "endpoint_class": "runInferenceTranscript",
+      "request": {
+        "body_json_parsed": true,
+        "body_bytes": 4077,
+        "body_rewritten": true,
+        "create_thread": false,
+        "is_partial_transcript": true,
+        "transcript_entry_count": 5,
+        "transcript_type_counts": {
+          "config": 1,
+          "context": 2,
+          "updated-config": 1,
+          "user": 1
+        },
+        "transcript_order": [
+          {
+            "index": 0,
+            "type": "config",
+            "value_type": "object"
+          },
+          {
+            "index": 1,
+            "type": "context",
+            "value_type": "object"
+          },
+          {
+            "index": 2,
+            "type": "context",
+            "value_type": "object"
+          },
+          {
+            "index": 3,
+            "type": "updated-config",
+            "value_type": "object"
+          },
+          {
+            "index": 4,
+            "type": "user",
+            "value_type": "array"
+          }
+        ],
+        "user_payload_string_statistics": {
+          "string_count": 1,
+          "total_characters": 102,
+          "maximum_string_characters": 102
+        },
+        "effective_context_management_configuration": {
+          "recentSearchToolResultsToKeep": -1,
+          "compactThreshold": 0.02,
+          "createSummaryThreshold": 0.01,
+          "updateSummaryInterval": 0.005
+        }
+      },
+      "response": {
+        "outcome_class": "application-level-quota-failure",
+        "http_statuses": [
+          200
+        ],
+        "response_header_content_type_class": "application/x-ndjson",
+        "response_header_content_encoding_class": "zstd",
+        "captured_body_state": "decoded-fetch-response-stream",
+        "response_start_count": 1,
+        "response_end_count": 1,
+        "captured_chunk_count": 2,
+        "captured_byte_count": 8616,
+        "parsed_ndjson_event_count": 2,
+        "unparsed_line_count": 0,
+        "event_sequence": [
+          "patch-start",
+          "record-map"
+        ],
+        "event_type_counts": {
+          "patch-start": 1,
+          "record-map": 1
+        },
+        "allowlisted_nested_type_counts": {
+          "config": 1,
+          "cumulative": 4,
+          "everything": 1,
+          "patch-start": 1,
+          "premium-feature-unavailable": 2,
+          "product": 2,
+          "record-map": 1,
+          "unavailable": 2,
+          "workflow": 2
+        },
+        "allowlisted_status_counts": {
+          "completed": 9
+        },
+        "exact_marker_counts": {
+          "agent-transcript-summary": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "activate-transcript-compaction": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "summary-inference": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "summarize-transcript": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "summarize-transcript-error": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          },
+          "premium-feature-unavailable": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 2
+          },
+          "error": {
+            "request_body_occurrences": 0,
+            "decoded_response_occurrences": 0
+          }
+        },
+        "model_calls": [],
+        "has_terminal_patch_sync": false,
+        "capture_integrity": {
+          "chunk_indexes_contiguous": true,
+          "chunk_byte_lengths_match": true,
+          "response_end_chunk_count_matches": true,
+          "response_end_total_bytes_matches": true
+        }
+      },
+      "relevant_field_schema": [
+        {
+          "scope": "request_body",
+          "field": "compactThreshold",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "contextManagementConfiguration",
+          "occurrences": 1,
+          "value_types": [
+            "object"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "createSummaryThreshold",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "model",
+          "occurrences": 1,
+          "value_types": [
+            "string"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "recentSearchToolResultsToKeep",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "type",
+          "occurrences": 7,
+          "value_types": [
+            "string"
+          ]
+        },
+        {
+          "scope": "request_body",
+          "field": "updateSummaryInterval",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "agent_inference_count",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "basic_ai_credits",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "cached_input_tokens_created",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "cached_input_tokens_read",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "completion_count",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "credits_by_type_unit",
+          "occurrences": 1,
+          "value_types": [
+            "object"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "exempt_ai_credits",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "input_tokens",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "model",
+          "occurrences": 1,
+          "value_types": [
+            "string"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "output_tokens",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "premium_ai_credits",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "preview_ai_credits",
+          "occurrences": 1,
+          "value_types": [
+            "number"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "type",
+          "occurrences": 16,
+          "value_types": [
+            "string"
+          ]
+        },
+        {
+          "scope": "decoded_response",
+          "field": "usage_summary",
+          "occurrences": 1,
+          "value_types": [
+            "object"
+          ]
+        }
+      ]
+    }
+  ]
+}

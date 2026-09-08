@@ -1,0 +1,8 @@
+{"type":"patch-start","data":{"s":[{"type":"config","value":{"mode":"offline-fixture"}}]}}
+{"type":"patch","v":[{"o":"a","p":"/s/-","v":{"type":"agent-tool-result","name":"fixture_lookup","value":{"status":"ok","items":[]}}}]}
+{"type":"patch","v":[{"o":"a","p":"/s/-","v":{"type":"agent-inference","value":[{"type":"text","content":"The adapter"}],"isModelFailover":true}}]}
+{"type":"patch","v":[{"o":"x","p":"/s/2/value/0/content","v":" works"}]}
+{"type":"patch","v":[{"o":"x","p":"/s/2/value/0/content","v":" offline."}]}
+{"type":"patch","v":[{"o":"a","p":"/s/2/model","v":"fixture-model"},{"o":"a","p":"/s/2/inputTokens","v":23},{"o":"a","p":"/s/2/outputTokens","v":6},{"o":"a","p":"/s/2/cachedTokensCreated","v":4},{"o":"a","p":"/s/2/cachedTokensRead","v":11},{"o":"a","p":"/s/2/isModelFailover"}]}
+{"type":"record-map","data":{"recordMap":{"fixture":{"role":"reader","value":{"kind":"synthetic"}}}}}
+{"type":"patch-sync","data":{"s":[{"type":"config","value":{"mode":"offline-fixture"}},{"type":"agent-tool-result","name":"fixture_lookup","value":{"status":"ok","items":[]}},{"type":"agent-inference","value":[{"type":"text","content":"The adapter works offline."}],"model":"fixture-model","inputTokens":23,"outputTokens":6,"cachedTokensCreated":4,"cachedTokensRead":11}]}}

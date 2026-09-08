@@ -1,0 +1,41 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/notion-core",
+    "crates/notion-api",
+    "crates/notion-store",
+    "crates/notion-server",
+    "crates/notion-testkit",
+    "crates/notionize",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[workspace.dependencies]
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+anyhow = "1"
+async-trait = "0.1"
+uuid = { version = "1", features = ["v4", "serde"] }
+time = { version = "0.3", features = ["serde", "formatting"] }
+tracing = "0.1"
+
+# fragile layer
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "cookies", "json", "stream"] }
+zstd = "0.13"
+
+# store
+rusqlite = { version = "0.32", features = ["bundled"] }
+keyring = "3"
+
+# server
+axum = "0.7"
+tower-http = { version = "0.6", features = ["fs"] }
+
+# cli
+clap = { version = "4", features = ["derive"] }

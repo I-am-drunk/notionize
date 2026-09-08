@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- LaunchAgent (per-user, so it can reach the login keychain). Installed to
+     ~/Library/LaunchAgents/. Runs `notionize up` at login and keeps it alive. -->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.notionize.daemon</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>__BIN__</string>
+        <string>up</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>__LOG__/notionize.log</string>
+    <key>StandardErrorPath</key>
+    <string>__LOG__/notionize.err.log</string>
+</dict>
+</plist>

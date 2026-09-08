@@ -1,0 +1,3949 @@
+{
+  "schema_version": 2,
+  "generated_at": "2026-08-27T04:56:07.920375+00:00",
+  "privacy_boundary": "IDs, prompts, personal context values, response prose, URLs, headers, cookies, raw bodies, and record-map contents are omitted.",
+  "coverage": {
+    "raw_har_count": 6,
+    "sanitized_har_count": 6,
+    "raw_files": [
+      "ai-probe-auto.har",
+      "ai-probe-gpt56-sol-medium.har",
+      "ai-probe-gpt56-sol-no-thinking.har",
+      "ai-session-settled-full.har",
+      "baseline-full.har",
+      "notion-live-session-2026-08-27.har"
+    ],
+    "sanitized_files": [
+      "ai-probe-auto.sanitized.har",
+      "ai-probe-gpt56-sol-medium.sanitized.har",
+      "ai-probe-gpt56-sol-no-thinking.sanitized.har",
+      "ai-session-settled-full.sanitized.har",
+      "baseline-full.sanitized.har",
+      "notion-live-session-2026-08-27.sanitized.har"
+    ]
+  },
+  "validation": [
+    {
+      "raw_capture": "ai-probe-auto.har",
+      "sanitized_capture": "ai-probe-auto.sanitized.har",
+      "raw_inference_entry_count": 1,
+      "sanitized_inference_entry_count": 1,
+      "privacy_safe_summary_matches": true
+    },
+    {
+      "raw_capture": "ai-probe-gpt56-sol-medium.har",
+      "sanitized_capture": "ai-probe-gpt56-sol-medium.sanitized.har",
+      "raw_inference_entry_count": 1,
+      "sanitized_inference_entry_count": 1,
+      "privacy_safe_summary_matches": true
+    },
+    {
+      "raw_capture": "ai-probe-gpt56-sol-no-thinking.har",
+      "sanitized_capture": "ai-probe-gpt56-sol-no-thinking.sanitized.har",
+      "raw_inference_entry_count": 1,
+      "sanitized_inference_entry_count": 1,
+      "privacy_safe_summary_matches": true
+    },
+    {
+      "raw_capture": "ai-session-settled-full.har",
+      "sanitized_capture": "ai-session-settled-full.sanitized.har",
+      "raw_inference_entry_count": 1,
+      "sanitized_inference_entry_count": 1,
+      "privacy_safe_summary_matches": true
+    },
+    {
+      "raw_capture": "baseline-full.har",
+      "sanitized_capture": "baseline-full.sanitized.har",
+      "raw_inference_entry_count": 0,
+      "sanitized_inference_entry_count": 0,
+      "privacy_safe_summary_matches": true
+    },
+    {
+      "raw_capture": "notion-live-session-2026-08-27.har",
+      "sanitized_capture": "notion-live-session-2026-08-27.sanitized.har",
+      "raw_inference_entry_count": 3,
+      "sanitized_inference_entry_count": 3,
+      "privacy_safe_summary_matches": true
+    }
+  ],
+  "transaction_identity": {
+    "inference_bearing_capture_count": 5,
+    "inference_transaction_observation_count": 7,
+    "distinct_inference_transaction_count": 6,
+    "successful_transaction_observation_count": 5,
+    "application_error_transaction_observation_count": 2,
+    "http_error_transaction_observation_count": 0,
+    "incomplete_or_unclassified_transaction_observation_count": 0,
+    "duplicate_transactions": [
+      {
+        "transaction": "ai-session-settled-full.har#entry-1",
+        "capture": "ai-session-settled-full.har",
+        "entry_index": 1,
+        "duplicate_of": "ai-probe-gpt56-sol-medium.har#entry-1",
+        "comparison_method": "SHA-256 equality over request postData text and decoded response NDJSON",
+        "request_sha256_equal": true,
+        "decoded_response_sha256_equal": true
+      }
+    ]
+  },
+  "captures": [
+    {
+      "capture": "ai-probe-auto.har",
+      "inference_present": true,
+      "inference_entry_count": 1,
+      "inference_success_count": 1,
+      "inference_application_error_count": 0,
+      "inference_http_error_count": 0,
+      "inference_incomplete_or_unclassified_count": 0,
+      "inference_entries": [
+        {
+          "entry_index": 1,
+          "outcome": "success",
+          "duplicate_of": null,
+          "transport": {
+            "method": "POST",
+            "path": "/api/v3/runInferenceTranscript",
+            "request_mime": "application/json",
+            "status": 200,
+            "response_mime": "application/x-ndjson",
+            "har_time_ms": 388
+          },
+          "request": {
+            "asPatchResponse": true,
+            "patchResponseVersion": 2,
+            "createThread": true,
+            "generateTitle": true,
+            "isPartialTranscript": false,
+            "saveAllThreadOperations": true,
+            "setUnreadState": true,
+            "createdSource": "workflows",
+            "threadType": "workflow",
+            "transcript_steps": [
+              {
+                "type": "config",
+                "config": {
+                  "type": "workflow",
+                  "model": "auto",
+                  "useWebSearch": true,
+                  "searchScopes": [
+                    "everything"
+                  ],
+                  "availableConnectors": [
+                    "notion-calendar"
+                  ]
+                }
+              },
+              {
+                "type": "context",
+                "context_fields": [
+                  "currentDatetime",
+                  "spaceId",
+                  "spaceName",
+                  "spaceViewId",
+                  "surface",
+                  "timezone",
+                  "userEmail",
+                  "userId",
+                  "userName"
+                ]
+              },
+              {
+                "type": "user",
+                "message_characters": 54
+              }
+            ]
+          },
+          "request_leaf_schema": [
+            {
+              "path": "asPatchResponse",
+              "type": "boolean"
+            },
+            {
+              "path": "createThread",
+              "type": "boolean"
+            },
+            {
+              "path": "createdSource",
+              "type": "string"
+            },
+            {
+              "path": "debugOverrides.emitAgentSearchExtractedResults",
+              "type": "boolean"
+            },
+            {
+              "path": "debugOverrides.emitInferences",
+              "type": "boolean"
+            },
+            {
+              "path": "generateTitle",
+              "type": "boolean"
+            },
+            {
+              "path": "isPartialTranscript",
+              "type": "boolean"
+            },
+            {
+              "path": "isSpaceSalesAssisted",
+              "type": "boolean"
+            },
+            {
+              "path": "isUserInAnySalesAssistedSpace",
+              "type": "boolean"
+            },
+            {
+              "path": "patchResponseVersion",
+              "type": "number"
+            },
+            {
+              "path": "saveAllThreadOperations",
+              "type": "boolean"
+            },
+            {
+              "path": "setUnreadState",
+              "type": "boolean"
+            },
+            {
+              "path": "spaceId",
+              "type": "string"
+            },
+            {
+              "path": "supportsCustomAgentNudgeTranscriptStep",
+              "type": "boolean"
+            },
+            {
+              "path": "threadId",
+              "type": "string"
+            },
+            {
+              "path": "threadParentPointer.id",
+              "type": "string"
+            },
+            {
+              "path": "threadParentPointer.spaceId",
+              "type": "string"
+            },
+            {
+              "path": "threadParentPointer.table",
+              "type": "string"
+            },
+            {
+              "path": "threadType",
+              "type": "string"
+            },
+            {
+              "path": "traceId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].createdAt",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].id",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].userId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.[].[]",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.availableConnectors.[]",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.currentDatetime",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.databaseAgentConfigMode",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentAskSurvey",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentAutomations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentCardCustomization",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentDiffs",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentGenerateImage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentIntegrations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentSkillsV2",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentSupportPropertyReorder",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentThreadTools",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableComputer",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCrdtOperations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCsvAttachmentSupport",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCustomAgentCreateGuidanceV2",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCustomAgents",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableExperimentalIntegrations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableLargeToolResultComputerOffload",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailAgentMultiProviderSupport",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailExplicitToolCalls",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailNotificationPreferences",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMarkdownVNext",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableNotionMailDeprecated",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableQueryCalendar",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableQueryMail",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentAdvanced",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGoogleDriveInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGoogleDriveOAuthInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGtm",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentMcpServers",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentSearchConnectorsInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentSlack",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSkillsInCustomAgents",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSoftwareFactoryPage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSuggestedEditsTools",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSystemPromptAsPage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableUpdatePageOrderUpdates",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableUserSessionContext",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableWebResearch",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.internetAccess",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isAgentResearchRequest",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgentBuilder",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgentCreate",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isHipaa",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isMobile",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isOnboardingAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.manageWorkers",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.modelFromUser",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.searchScopes.[].type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.showDatabaseAgentsDiscoverability",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.spaceId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.spaceName",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.spaceViewId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.surface",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.timezone",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.updatePageStaleViewGuardEnabled",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useCustomAgentDraft",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useReadOnlyMode",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useRulePrioritization",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useWebSearch",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.userEmail",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.userId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.userName",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.writerMode",
+              "type": "boolean"
+            }
+          ],
+          "stream": {
+            "line_count": 15,
+            "line_types_in_order": [
+              "patch-start",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "record-map",
+              "patch-sync"
+            ],
+            "line_type_counts": {
+              "patch-start": 1,
+              "patch": 12,
+              "record-map": 1,
+              "patch-sync": 1
+            },
+            "patch_op_counts": {
+              "a": 20,
+              "x": 3
+            },
+            "patch_paths": {
+              "/s/<index>": 7,
+              "/s/<index>/cachedTokensCreated": 1,
+              "/s/<index>/cachedTokensRead": 1,
+              "/s/<index>/finishedAt": 1,
+              "/s/<index>/inputTokens": 1,
+              "/s/<index>/isModelFailover": 1,
+              "/s/<index>/maxContextTokens": 1,
+              "/s/<index>/maxInputTokens": 1,
+              "/s/<index>/model": 1,
+              "/s/<index>/outputTokens": 1,
+              "/s/<index>/recordVersions": 1,
+              "/s/<index>/serverPostSubmitTimeToFirstTokenMs": 1,
+              "/s/<index>/serverTimeToFirstTokenMs": 1,
+              "/s/<index>/serverTimeToSubmitLlmMs": 1,
+              "/s/<index>/value/<index>/content": 3
+            },
+            "patch_reconstruction": {
+              "operation_count": 23,
+              "patch_start_version": 1,
+              "patch_sync_version": 1,
+              "matches_patch_sync": true,
+              "attempted": true
+            },
+            "appended_step_types": [
+              "agent-turn-full-record-map",
+              "agent-tool-result",
+              "agent-tool-result",
+              "agent-tool-result",
+              "config",
+              "title",
+              "agent-inference"
+            ],
+            "tool_results": [
+              {
+                "toolName": "callFunction",
+                "toolType": "callFunction",
+                "state": "applied",
+                "autoLoadPhase": "core_docs",
+                "durationMs": 16,
+                "module": "fs-module",
+                "function": "connections.fs.readFiles"
+              },
+              {
+                "toolName": "callFunction",
+                "toolType": "callFunction",
+                "state": "applied",
+                "autoLoadPhase": "user_docs",
+                "durationMs": 15,
+                "module": "fs-module",
+                "function": "connections.fs.readFiles"
+              },
+              {
+                "toolName": "callFunction",
+                "toolType": "callFunction",
+                "state": "applied",
+                "autoLoadPhase": "context_urls",
+                "durationMs": 28,
+                "module": "notion-module",
+                "function": "connections.notion.loadUser"
+              }
+            ],
+            "record_map_table_counts": {
+              "__version__": 0,
+              "thread": 1,
+              "thread_message": 10
+            },
+            "initial_step_types": [
+              "agent-instruction-state"
+            ],
+            "final_step_types": [
+              "agent-instruction-state",
+              "agent-turn-full-record-map",
+              "agent-tool-result",
+              "agent-tool-result",
+              "agent-tool-result",
+              "config",
+              "title",
+              "agent-inference"
+            ],
+            "terminal_patch_sync_present": true,
+            "final_inference_present": true,
+            "terminal_usage_present": true,
+            "final_inference": {
+              "model": "oatmeal-cookie",
+              "inputTokens": 22560,
+              "outputTokens": 8,
+              "cachedTokensRead": 20864,
+              "cachedTokensCreated": 0,
+              "serverTimeToSubmitLlmMs": 49.137178000062704,
+              "serverTimeToFirstTokenMs": 3627.2089029997587,
+              "serverPostSubmitTimeToFirstTokenMs": 3578.071724999696,
+              "maxContextTokens": 400000,
+              "maxInputTokens": 272000,
+              "response_characters": 17,
+              "modelFailover": null
+            },
+            "application_error": null
+          }
+        }
+      ]
+    },
+    {
+      "capture": "ai-probe-gpt56-sol-medium.har",
+      "inference_present": true,
+      "inference_entry_count": 1,
+      "inference_success_count": 1,
+      "inference_application_error_count": 0,
+      "inference_http_error_count": 0,
+      "inference_incomplete_or_unclassified_count": 0,
+      "inference_entries": [
+        {
+          "entry_index": 1,
+          "outcome": "success",
+          "duplicate_of": null,
+          "transport": {
+            "method": "POST",
+            "path": "/api/v3/runInferenceTranscript",
+            "request_mime": "application/json",
+            "status": 200,
+            "response_mime": "application/x-ndjson",
+            "har_time_ms": 124
+          },
+          "request": {
+            "asPatchResponse": true,
+            "patchResponseVersion": 2,
+            "createThread": false,
+            "generateTitle": false,
+            "isPartialTranscript": true,
+            "saveAllThreadOperations": true,
+            "setUnreadState": true,
+            "createdSource": "workflows",
+            "threadType": "workflow",
+            "transcript_steps": [
+              {
+                "type": "config",
+                "config": {
+                  "type": "workflow",
+                  "model": "oatmeal-cookie",
+                  "useWebSearch": true,
+                  "searchScopes": [
+                    "everything"
+                  ],
+                  "availableConnectors": [
+                    "notion-calendar"
+                  ]
+                }
+              },
+              {
+                "type": "context",
+                "context_fields": [
+                  "currentDatetime",
+                  "spaceId",
+                  "spaceName",
+                  "spaceViewId",
+                  "surface",
+                  "timezone",
+                  "userEmail",
+                  "userId",
+                  "userName"
+                ]
+              },
+              {
+                "type": "updated-config",
+                "updated_config": {
+                  "model": "orange-mousse",
+                  "modelFromUser": true,
+                  "reasoningEffort": "medium"
+                }
+              },
+              {
+                "type": "user",
+                "message_characters": 57
+              }
+            ]
+          },
+          "request_leaf_schema": [
+            {
+              "path": "asPatchResponse",
+              "type": "boolean"
+            },
+            {
+              "path": "createThread",
+              "type": "boolean"
+            },
+            {
+              "path": "createdSource",
+              "type": "string"
+            },
+            {
+              "path": "debugOverrides.emitAgentSearchExtractedResults",
+              "type": "boolean"
+            },
+            {
+              "path": "debugOverrides.emitInferences",
+              "type": "boolean"
+            },
+            {
+              "path": "generateTitle",
+              "type": "boolean"
+            },
+            {
+              "path": "isPartialTranscript",
+              "type": "boolean"
+            },
+            {
+              "path": "isSpaceSalesAssisted",
+              "type": "boolean"
+            },
+            {
+              "path": "isUserInAnySalesAssistedSpace",
+              "type": "boolean"
+            },
+            {
+              "path": "patchResponseVersion",
+              "type": "number"
+            },
+            {
+              "path": "saveAllThreadOperations",
+              "type": "boolean"
+            },
+            {
+              "path": "setUnreadState",
+              "type": "boolean"
+            },
+            {
+              "path": "spaceId",
+              "type": "string"
+            },
+            {
+              "path": "supportsCustomAgentNudgeTranscriptStep",
+              "type": "boolean"
+            },
+            {
+              "path": "threadId",
+              "type": "string"
+            },
+            {
+              "path": "threadType",
+              "type": "string"
+            },
+            {
+              "path": "traceId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].createdAt",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].id",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].userId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.[].[]",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.availableConnectors.[]",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.canAccessAllAgentThreads",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.currentDatetime",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.databaseAgentConfigMode",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentAskSurvey",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentAutomations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentCardCustomization",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentDiffs",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentGenerateImage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentIntegrations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentSkillsV2",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentSupportPropertyReorder",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentThreadTools",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableComputer",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCrdtOperations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCsvAttachmentSupport",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCustomAgentCreateGuidanceV2",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCustomAgents",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableExperimentalIntegrations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableLargeToolResultComputerOffload",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailAgentMultiProviderSupport",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailExplicitToolCalls",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailNotificationPreferences",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMarkdownVNext",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableNotionMailDeprecated",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableQueryCalendar",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableQueryMail",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentAdvanced",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGoogleDriveInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGoogleDriveOAuthInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGtm",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentMcpServers",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentSearchConnectorsInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentSlack",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSkillsInCustomAgents",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSoftwareFactoryPage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSuggestedEditsTools",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSystemPromptAsPage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableUpdatePageOrderUpdates",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableUserSessionContext",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableWebResearch",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.internetAccess",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isAgentResearchRequest",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgentBuilder",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgentCreate",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isHipaa",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isMobile",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isOnboardingAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isSlackGridExpandedToolsEligible",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isThreadStartedByAdmin",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.manageWorkers",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.model",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.modelFromUser",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.reasoningEffort",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.searchScopes.[].type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.showDatabaseAgentsDiscoverability",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.spaceId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.spaceName",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.spaceViewId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.surface",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.timezone",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.updatePageStaleViewGuardEnabled",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useContextualCoreDocsAutoLoad",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useCustomAgentDraft",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useDocPreviewsForCoreAutoLoad",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useReadOnlyMode",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useRulePrioritization",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useWebSearch",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.userEmail",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.userId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.userName",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.writerMode",
+              "type": "boolean"
+            }
+          ],
+          "stream": {
+            "line_count": 9,
+            "line_types_in_order": [
+              "patch-start",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "record-map",
+              "patch-sync"
+            ],
+            "line_type_counts": {
+              "patch-start": 1,
+              "patch": 6,
+              "record-map": 1,
+              "patch-sync": 1
+            },
+            "patch_op_counts": {
+              "a": 14,
+              "x": 3
+            },
+            "patch_paths": {
+              "/s/<index>": 1,
+              "/s/<index>/cachedTokensCreated": 1,
+              "/s/<index>/cachedTokensRead": 1,
+              "/s/<index>/finishedAt": 1,
+              "/s/<index>/inputTokens": 1,
+              "/s/<index>/isModelFailover": 1,
+              "/s/<index>/maxContextTokens": 1,
+              "/s/<index>/maxInputTokens": 1,
+              "/s/<index>/model": 1,
+              "/s/<index>/outputTokens": 1,
+              "/s/<index>/recordVersions": 1,
+              "/s/<index>/serverPostSubmitTimeToFirstTokenMs": 1,
+              "/s/<index>/serverTimeToFirstTokenMs": 1,
+              "/s/<index>/serverTimeToSubmitLlmMs": 1,
+              "/s/<index>/value/<index>/content": 3
+            },
+            "patch_reconstruction": {
+              "operation_count": 17,
+              "patch_start_version": 1,
+              "patch_sync_version": 1,
+              "matches_patch_sync": true,
+              "attempted": true
+            },
+            "appended_step_types": [
+              "agent-inference"
+            ],
+            "tool_results": [],
+            "record_map_table_counts": {
+              "__version__": 0,
+              "thread": 1,
+              "thread_message": 3
+            },
+            "initial_step_types": [
+              "agent-turn-full-record-map"
+            ],
+            "final_step_types": [
+              "agent-turn-full-record-map",
+              "agent-inference"
+            ],
+            "terminal_patch_sync_present": true,
+            "final_inference_present": true,
+            "terminal_usage_present": true,
+            "final_inference": {
+              "model": "orange-mousse",
+              "inputTokens": 4862,
+              "outputTokens": 8,
+              "cachedTokensRead": 4859,
+              "cachedTokensCreated": 16967,
+              "serverTimeToSubmitLlmMs": 30.90899599902332,
+              "serverTimeToFirstTokenMs": 2468.936939999461,
+              "serverPostSubmitTimeToFirstTokenMs": 2438.027944000438,
+              "maxContextTokens": 400000,
+              "maxInputTokens": 272000,
+              "response_characters": 20,
+              "modelFailover": null
+            },
+            "application_error": null
+          }
+        }
+      ]
+    },
+    {
+      "capture": "ai-probe-gpt56-sol-no-thinking.har",
+      "inference_present": true,
+      "inference_entry_count": 1,
+      "inference_success_count": 1,
+      "inference_application_error_count": 0,
+      "inference_http_error_count": 0,
+      "inference_incomplete_or_unclassified_count": 0,
+      "inference_entries": [
+        {
+          "entry_index": 1,
+          "outcome": "success",
+          "duplicate_of": null,
+          "transport": {
+            "method": "POST",
+            "path": "/api/v3/runInferenceTranscript",
+            "request_mime": "application/json",
+            "status": 200,
+            "response_mime": "application/x-ndjson",
+            "har_time_ms": 3382
+          },
+          "request": {
+            "asPatchResponse": true,
+            "patchResponseVersion": 2,
+            "createThread": true,
+            "generateTitle": true,
+            "isPartialTranscript": false,
+            "saveAllThreadOperations": true,
+            "setUnreadState": true,
+            "createdSource": "workflows",
+            "threadType": "workflow",
+            "transcript_steps": [
+              {
+                "type": "config",
+                "config": {
+                  "type": "workflow",
+                  "model": "orange-mousse",
+                  "useWebSearch": true,
+                  "searchScopes": [
+                    "everything"
+                  ],
+                  "availableConnectors": [
+                    "notion-calendar"
+                  ]
+                }
+              },
+              {
+                "type": "context",
+                "context_fields": [
+                  "currentDatetime",
+                  "spaceId",
+                  "spaceName",
+                  "spaceViewId",
+                  "surface",
+                  "timezone",
+                  "userEmail",
+                  "userId",
+                  "userName"
+                ]
+              },
+              {
+                "type": "user",
+                "message_characters": 55
+              }
+            ]
+          },
+          "request_leaf_schema": [
+            {
+              "path": "asPatchResponse",
+              "type": "boolean"
+            },
+            {
+              "path": "createThread",
+              "type": "boolean"
+            },
+            {
+              "path": "createdSource",
+              "type": "string"
+            },
+            {
+              "path": "debugOverrides.emitAgentSearchExtractedResults",
+              "type": "boolean"
+            },
+            {
+              "path": "debugOverrides.emitInferences",
+              "type": "boolean"
+            },
+            {
+              "path": "generateTitle",
+              "type": "boolean"
+            },
+            {
+              "path": "isPartialTranscript",
+              "type": "boolean"
+            },
+            {
+              "path": "isSpaceSalesAssisted",
+              "type": "boolean"
+            },
+            {
+              "path": "isUserInAnySalesAssistedSpace",
+              "type": "boolean"
+            },
+            {
+              "path": "patchResponseVersion",
+              "type": "number"
+            },
+            {
+              "path": "saveAllThreadOperations",
+              "type": "boolean"
+            },
+            {
+              "path": "setUnreadState",
+              "type": "boolean"
+            },
+            {
+              "path": "spaceId",
+              "type": "string"
+            },
+            {
+              "path": "supportsCustomAgentNudgeTranscriptStep",
+              "type": "boolean"
+            },
+            {
+              "path": "threadId",
+              "type": "string"
+            },
+            {
+              "path": "threadParentPointer.id",
+              "type": "string"
+            },
+            {
+              "path": "threadParentPointer.spaceId",
+              "type": "string"
+            },
+            {
+              "path": "threadParentPointer.table",
+              "type": "string"
+            },
+            {
+              "path": "threadType",
+              "type": "string"
+            },
+            {
+              "path": "traceId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].createdAt",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].id",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].userId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.[].[]",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.availableConnectors.[]",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.currentDatetime",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.databaseAgentConfigMode",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentAskSurvey",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentAutomations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentCardCustomization",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentDiffs",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentGenerateImage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentIntegrations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentSkillsV2",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentSupportPropertyReorder",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentThreadTools",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableComputer",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCrdtOperations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCsvAttachmentSupport",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCustomAgentCreateGuidanceV2",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCustomAgents",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableExperimentalIntegrations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableLargeToolResultComputerOffload",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailAgentMultiProviderSupport",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailExplicitToolCalls",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailNotificationPreferences",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMarkdownVNext",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableNotionMailDeprecated",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableQueryCalendar",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableQueryMail",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentAdvanced",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGoogleDriveInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGoogleDriveOAuthInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGtm",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentMcpServers",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentSearchConnectorsInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentSlack",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSkillsInCustomAgents",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSoftwareFactoryPage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSuggestedEditsTools",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSystemPromptAsPage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableUpdatePageOrderUpdates",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableUserSessionContext",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableWebResearch",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.internetAccess",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isAgentResearchRequest",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgentBuilder",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgentCreate",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isHipaa",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isMobile",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isOnboardingAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.manageWorkers",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.model",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.modelFromUser",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.reasoningEffort",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.searchScopes.[].type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.showDatabaseAgentsDiscoverability",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.spaceId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.spaceName",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.spaceViewId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.surface",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.timezone",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.updatePageStaleViewGuardEnabled",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useCustomAgentDraft",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useReadOnlyMode",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useRulePrioritization",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useWebSearch",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.userEmail",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.userId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.userName",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.writerMode",
+              "type": "boolean"
+            }
+          ],
+          "stream": {
+            "line_count": 15,
+            "line_types_in_order": [
+              "patch-start",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "record-map",
+              "patch-sync"
+            ],
+            "line_type_counts": {
+              "patch-start": 1,
+              "patch": 12,
+              "record-map": 1,
+              "patch-sync": 1
+            },
+            "patch_op_counts": {
+              "a": 19,
+              "x": 4
+            },
+            "patch_paths": {
+              "/s/<index>": 6,
+              "/s/<index>/cachedTokensCreated": 1,
+              "/s/<index>/cachedTokensRead": 1,
+              "/s/<index>/finishedAt": 1,
+              "/s/<index>/inputTokens": 1,
+              "/s/<index>/isModelFailover": 1,
+              "/s/<index>/maxContextTokens": 1,
+              "/s/<index>/maxInputTokens": 1,
+              "/s/<index>/model": 1,
+              "/s/<index>/outputTokens": 1,
+              "/s/<index>/recordVersions": 1,
+              "/s/<index>/serverPostSubmitTimeToFirstTokenMs": 1,
+              "/s/<index>/serverTimeToFirstTokenMs": 1,
+              "/s/<index>/serverTimeToSubmitLlmMs": 1,
+              "/s/<index>/value/<index>/content": 4
+            },
+            "patch_reconstruction": {
+              "operation_count": 23,
+              "patch_start_version": 1,
+              "patch_sync_version": 1,
+              "matches_patch_sync": true,
+              "attempted": true
+            },
+            "appended_step_types": [
+              "agent-turn-full-record-map",
+              "agent-tool-result",
+              "agent-tool-result",
+              "agent-tool-result",
+              "agent-inference",
+              "title"
+            ],
+            "tool_results": [
+              {
+                "toolName": "callFunction",
+                "toolType": "callFunction",
+                "state": "applied",
+                "autoLoadPhase": "core_docs",
+                "durationMs": 11,
+                "module": "fs-module",
+                "function": "connections.fs.readFiles"
+              },
+              {
+                "toolName": "callFunction",
+                "toolType": "callFunction",
+                "state": "applied",
+                "autoLoadPhase": "user_docs",
+                "durationMs": 11,
+                "module": "fs-module",
+                "function": "connections.fs.readFiles"
+              },
+              {
+                "toolName": "callFunction",
+                "toolType": "callFunction",
+                "state": "applied",
+                "autoLoadPhase": "context_urls",
+                "durationMs": 23,
+                "module": "notion-module",
+                "function": "connections.notion.loadUser"
+              }
+            ],
+            "record_map_table_counts": {
+              "__version__": 0,
+              "thread": 1,
+              "thread_message": 10
+            },
+            "initial_step_types": [
+              "agent-instruction-state"
+            ],
+            "final_step_types": [
+              "agent-instruction-state",
+              "agent-turn-full-record-map",
+              "agent-tool-result",
+              "agent-tool-result",
+              "agent-tool-result",
+              "agent-inference",
+              "title"
+            ],
+            "terminal_patch_sync_present": true,
+            "final_inference_present": true,
+            "terminal_usage_present": true,
+            "final_inference": {
+              "model": "orange-mousse",
+              "inputTokens": 3,
+              "outputTokens": 9,
+              "cachedTokensRead": 0,
+              "cachedTokensCreated": 20567,
+              "serverTimeToSubmitLlmMs": 30.088339000009,
+              "serverTimeToFirstTokenMs": 953.7392350002192,
+              "serverPostSubmitTimeToFirstTokenMs": 923.6508960002102,
+              "maxContextTokens": 400000,
+              "maxInputTokens": 272000,
+              "response_characters": 18,
+              "modelFailover": null
+            },
+            "application_error": null
+          }
+        }
+      ]
+    },
+    {
+      "capture": "ai-session-settled-full.har",
+      "inference_present": true,
+      "inference_entry_count": 1,
+      "inference_success_count": 1,
+      "inference_application_error_count": 0,
+      "inference_http_error_count": 0,
+      "inference_incomplete_or_unclassified_count": 0,
+      "inference_entries": [
+        {
+          "entry_index": 1,
+          "outcome": "success",
+          "duplicate_of": "ai-probe-gpt56-sol-medium.har#entry-1",
+          "transport": {
+            "method": "POST",
+            "path": "/api/v3/runInferenceTranscript",
+            "request_mime": "application/json",
+            "status": 200,
+            "response_mime": "application/x-ndjson",
+            "har_time_ms": 124
+          },
+          "request": {
+            "asPatchResponse": true,
+            "patchResponseVersion": 2,
+            "createThread": false,
+            "generateTitle": false,
+            "isPartialTranscript": true,
+            "saveAllThreadOperations": true,
+            "setUnreadState": true,
+            "createdSource": "workflows",
+            "threadType": "workflow",
+            "transcript_steps": [
+              {
+                "type": "config",
+                "config": {
+                  "type": "workflow",
+                  "model": "oatmeal-cookie",
+                  "useWebSearch": true,
+                  "searchScopes": [
+                    "everything"
+                  ],
+                  "availableConnectors": [
+                    "notion-calendar"
+                  ]
+                }
+              },
+              {
+                "type": "context",
+                "context_fields": [
+                  "currentDatetime",
+                  "spaceId",
+                  "spaceName",
+                  "spaceViewId",
+                  "surface",
+                  "timezone",
+                  "userEmail",
+                  "userId",
+                  "userName"
+                ]
+              },
+              {
+                "type": "updated-config",
+                "updated_config": {
+                  "model": "orange-mousse",
+                  "modelFromUser": true,
+                  "reasoningEffort": "medium"
+                }
+              },
+              {
+                "type": "user",
+                "message_characters": 57
+              }
+            ]
+          },
+          "request_leaf_schema": [
+            {
+              "path": "asPatchResponse",
+              "type": "boolean"
+            },
+            {
+              "path": "createThread",
+              "type": "boolean"
+            },
+            {
+              "path": "createdSource",
+              "type": "string"
+            },
+            {
+              "path": "debugOverrides.emitAgentSearchExtractedResults",
+              "type": "boolean"
+            },
+            {
+              "path": "debugOverrides.emitInferences",
+              "type": "boolean"
+            },
+            {
+              "path": "generateTitle",
+              "type": "boolean"
+            },
+            {
+              "path": "isPartialTranscript",
+              "type": "boolean"
+            },
+            {
+              "path": "isSpaceSalesAssisted",
+              "type": "boolean"
+            },
+            {
+              "path": "isUserInAnySalesAssistedSpace",
+              "type": "boolean"
+            },
+            {
+              "path": "patchResponseVersion",
+              "type": "number"
+            },
+            {
+              "path": "saveAllThreadOperations",
+              "type": "boolean"
+            },
+            {
+              "path": "setUnreadState",
+              "type": "boolean"
+            },
+            {
+              "path": "spaceId",
+              "type": "string"
+            },
+            {
+              "path": "supportsCustomAgentNudgeTranscriptStep",
+              "type": "boolean"
+            },
+            {
+              "path": "threadId",
+              "type": "string"
+            },
+            {
+              "path": "threadType",
+              "type": "string"
+            },
+            {
+              "path": "traceId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].createdAt",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].id",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].userId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.[].[]",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.availableConnectors.[]",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.canAccessAllAgentThreads",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.currentDatetime",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.databaseAgentConfigMode",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentAskSurvey",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentAutomations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentCardCustomization",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentDiffs",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentGenerateImage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentIntegrations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentSkillsV2",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentSupportPropertyReorder",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentThreadTools",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableComputer",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCrdtOperations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCsvAttachmentSupport",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCustomAgentCreateGuidanceV2",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCustomAgents",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableExperimentalIntegrations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableLargeToolResultComputerOffload",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailAgentMultiProviderSupport",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailExplicitToolCalls",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailNotificationPreferences",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMarkdownVNext",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableNotionMailDeprecated",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableQueryCalendar",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableQueryMail",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentAdvanced",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGoogleDriveInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGoogleDriveOAuthInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGtm",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentMcpServers",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentSearchConnectorsInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentSlack",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSkillsInCustomAgents",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSoftwareFactoryPage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSuggestedEditsTools",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSystemPromptAsPage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableUpdatePageOrderUpdates",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableUserSessionContext",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableWebResearch",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.internetAccess",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isAgentResearchRequest",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgentBuilder",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgentCreate",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isHipaa",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isMobile",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isOnboardingAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isSlackGridExpandedToolsEligible",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isThreadStartedByAdmin",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.manageWorkers",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.model",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.modelFromUser",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.reasoningEffort",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.searchScopes.[].type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.showDatabaseAgentsDiscoverability",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.spaceId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.spaceName",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.spaceViewId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.surface",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.timezone",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.updatePageStaleViewGuardEnabled",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useContextualCoreDocsAutoLoad",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useCustomAgentDraft",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useDocPreviewsForCoreAutoLoad",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useReadOnlyMode",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useRulePrioritization",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useWebSearch",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.userEmail",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.userId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.userName",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.writerMode",
+              "type": "boolean"
+            }
+          ],
+          "stream": {
+            "line_count": 9,
+            "line_types_in_order": [
+              "patch-start",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "record-map",
+              "patch-sync"
+            ],
+            "line_type_counts": {
+              "patch-start": 1,
+              "patch": 6,
+              "record-map": 1,
+              "patch-sync": 1
+            },
+            "patch_op_counts": {
+              "a": 14,
+              "x": 3
+            },
+            "patch_paths": {
+              "/s/<index>": 1,
+              "/s/<index>/cachedTokensCreated": 1,
+              "/s/<index>/cachedTokensRead": 1,
+              "/s/<index>/finishedAt": 1,
+              "/s/<index>/inputTokens": 1,
+              "/s/<index>/isModelFailover": 1,
+              "/s/<index>/maxContextTokens": 1,
+              "/s/<index>/maxInputTokens": 1,
+              "/s/<index>/model": 1,
+              "/s/<index>/outputTokens": 1,
+              "/s/<index>/recordVersions": 1,
+              "/s/<index>/serverPostSubmitTimeToFirstTokenMs": 1,
+              "/s/<index>/serverTimeToFirstTokenMs": 1,
+              "/s/<index>/serverTimeToSubmitLlmMs": 1,
+              "/s/<index>/value/<index>/content": 3
+            },
+            "patch_reconstruction": {
+              "operation_count": 17,
+              "patch_start_version": 1,
+              "patch_sync_version": 1,
+              "matches_patch_sync": true,
+              "attempted": true
+            },
+            "appended_step_types": [
+              "agent-inference"
+            ],
+            "tool_results": [],
+            "record_map_table_counts": {
+              "__version__": 0,
+              "thread": 1,
+              "thread_message": 3
+            },
+            "initial_step_types": [
+              "agent-turn-full-record-map"
+            ],
+            "final_step_types": [
+              "agent-turn-full-record-map",
+              "agent-inference"
+            ],
+            "terminal_patch_sync_present": true,
+            "final_inference_present": true,
+            "terminal_usage_present": true,
+            "final_inference": {
+              "model": "orange-mousse",
+              "inputTokens": 4862,
+              "outputTokens": 8,
+              "cachedTokensRead": 4859,
+              "cachedTokensCreated": 16967,
+              "serverTimeToSubmitLlmMs": 30.90899599902332,
+              "serverTimeToFirstTokenMs": 2468.936939999461,
+              "serverPostSubmitTimeToFirstTokenMs": 2438.027944000438,
+              "maxContextTokens": 400000,
+              "maxInputTokens": 272000,
+              "response_characters": 20,
+              "modelFailover": null
+            },
+            "application_error": null
+          }
+        }
+      ]
+    },
+    {
+      "capture": "baseline-full.har",
+      "inference_present": false,
+      "inference_entry_count": 0,
+      "inference_success_count": 0,
+      "inference_application_error_count": 0,
+      "inference_http_error_count": 0,
+      "inference_incomplete_or_unclassified_count": 0,
+      "inference_entries": []
+    },
+    {
+      "capture": "notion-live-session-2026-08-27.har",
+      "inference_present": true,
+      "inference_entry_count": 3,
+      "inference_success_count": 1,
+      "inference_application_error_count": 2,
+      "inference_http_error_count": 0,
+      "inference_incomplete_or_unclassified_count": 0,
+      "inference_entries": [
+        {
+          "entry_index": 1,
+          "outcome": "success",
+          "duplicate_of": null,
+          "transport": {
+            "method": "POST",
+            "path": "/api/v3/runInferenceTranscript",
+            "request_mime": "application/json",
+            "status": 200,
+            "response_mime": "application/x-ndjson",
+            "har_time_ms": 3021
+          },
+          "request": {
+            "asPatchResponse": true,
+            "patchResponseVersion": 2,
+            "createThread": false,
+            "generateTitle": false,
+            "isPartialTranscript": true,
+            "saveAllThreadOperations": true,
+            "setUnreadState": true,
+            "createdSource": "ai_module",
+            "threadType": "workflow",
+            "transcript_steps": [
+              {
+                "type": "config",
+                "config": {
+                  "type": "workflow",
+                  "model": "agave-flan",
+                  "useWebSearch": true,
+                  "searchScopes": [
+                    "everything"
+                  ],
+                  "availableConnectors": [
+                    "notion-calendar"
+                  ]
+                }
+              },
+              {
+                "type": "context",
+                "context_fields": [
+                  "currentDatetime",
+                  "spaceId",
+                  "spaceName",
+                  "spaceViewId",
+                  "surface",
+                  "timezone",
+                  "userEmail",
+                  "userId",
+                  "userName"
+                ]
+              },
+              {
+                "type": "context",
+                "context_fields": [
+                  "currentDatetime",
+                  "spaceId",
+                  "spaceName",
+                  "spaceViewId",
+                  "surface",
+                  "timezone",
+                  "userEmail",
+                  "userId",
+                  "userName"
+                ]
+              },
+              {
+                "type": "user",
+                "message_characters": 34045
+              }
+            ]
+          },
+          "request_leaf_schema": [
+            {
+              "path": "asPatchResponse",
+              "type": "boolean"
+            },
+            {
+              "path": "createThread",
+              "type": "boolean"
+            },
+            {
+              "path": "createdSource",
+              "type": "string"
+            },
+            {
+              "path": "debugOverrides.contextManagementConfiguration.compactThreshold",
+              "type": "number"
+            },
+            {
+              "path": "debugOverrides.contextManagementConfiguration.createSummaryThreshold",
+              "type": "number"
+            },
+            {
+              "path": "debugOverrides.contextManagementConfiguration.recentSearchToolResultsToKeep",
+              "type": "number"
+            },
+            {
+              "path": "debugOverrides.contextManagementConfiguration.updateSummaryInterval",
+              "type": "number"
+            },
+            {
+              "path": "debugOverrides.emitAgentSearchExtractedResults",
+              "type": "boolean"
+            },
+            {
+              "path": "debugOverrides.emitDebugErrors",
+              "type": "boolean"
+            },
+            {
+              "path": "debugOverrides.emitFullAgentSteps",
+              "type": "boolean"
+            },
+            {
+              "path": "debugOverrides.emitInferences",
+              "type": "boolean"
+            },
+            {
+              "path": "generateTitle",
+              "type": "boolean"
+            },
+            {
+              "path": "isPartialTranscript",
+              "type": "boolean"
+            },
+            {
+              "path": "isSpaceSalesAssisted",
+              "type": "boolean"
+            },
+            {
+              "path": "isUserInAnySalesAssistedSpace",
+              "type": "boolean"
+            },
+            {
+              "path": "patchResponseVersion",
+              "type": "number"
+            },
+            {
+              "path": "saveAllThreadOperations",
+              "type": "boolean"
+            },
+            {
+              "path": "setUnreadState",
+              "type": "boolean"
+            },
+            {
+              "path": "spaceId",
+              "type": "string"
+            },
+            {
+              "path": "supportsCustomAgentNudgeTranscriptStep",
+              "type": "boolean"
+            },
+            {
+              "path": "threadId",
+              "type": "string"
+            },
+            {
+              "path": "threadType",
+              "type": "string"
+            },
+            {
+              "path": "traceId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].createdAt",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].id",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].userId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.[].[]",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.availableConnectors.[]",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.currentDatetime",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.databaseAgentConfigMode",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentAskSurvey",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentAutomations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentCardCustomization",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentDiffs",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentGenerateImage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentIntegrations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentSkillsV2",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentSupportPropertyReorder",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentThreadTools",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableComputer",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCrdtOperations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCsvAttachmentSupport",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCustomAgentCreateGuidanceV2",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCustomAgents",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableExperimentalIntegrations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableLargeToolResultComputerOffload",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailAgentMultiProviderSupport",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailExplicitToolCalls",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailNotificationPreferences",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMarkdownVNext",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableNotionMailDeprecated",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableQueryCalendar",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableQueryMail",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentAdvanced",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGoogleDriveInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGoogleDriveOAuthInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGtm",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentMcpServers",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentSearchConnectorsInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentSlack",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSkillsInCustomAgents",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSoftwareFactoryPage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSuggestedEditsTools",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSystemPromptAsPage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableUpdatePageOrderUpdates",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableUserSessionContext",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableWebResearch",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.internetAccess",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isAgentResearchRequest",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgentBuilder",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgentCreate",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isHipaa",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isMobile",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isOnboardingAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.manageWorkers",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.model",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.modelFromUser",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.reasoningEffort",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.searchScopes.[].type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.showDatabaseAgentsDiscoverability",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.spaceId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.spaceName",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.spaceViewId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.surface",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.timezone",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.updatePageStaleViewGuardEnabled",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useContextualCoreDocsAutoLoad",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useCustomAgentDraft",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useDocPreviewsForCoreAutoLoad",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useReadOnlyMode",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useRulePrioritization",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useWebSearch",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.userEmail",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.userId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.userName",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.writerMode",
+              "type": "boolean"
+            }
+          ],
+          "stream": {
+            "line_count": 8,
+            "line_types_in_order": [
+              "patch-start",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "patch",
+              "record-map",
+              "patch-sync"
+            ],
+            "line_type_counts": {
+              "patch-start": 1,
+              "patch": 5,
+              "record-map": 1,
+              "patch-sync": 1
+            },
+            "patch_op_counts": {
+              "a": 14,
+              "x": 2
+            },
+            "patch_paths": {
+              "/s/<index>": 1,
+              "/s/<index>/cachedTokensCreated": 1,
+              "/s/<index>/cachedTokensRead": 1,
+              "/s/<index>/finishedAt": 1,
+              "/s/<index>/inputTokens": 1,
+              "/s/<index>/isModelFailover": 1,
+              "/s/<index>/maxContextTokens": 1,
+              "/s/<index>/maxInputTokens": 1,
+              "/s/<index>/model": 1,
+              "/s/<index>/outputTokens": 1,
+              "/s/<index>/recordVersions": 1,
+              "/s/<index>/serverPostSubmitTimeToFirstTokenMs": 1,
+              "/s/<index>/serverTimeToFirstTokenMs": 1,
+              "/s/<index>/serverTimeToSubmitLlmMs": 1,
+              "/s/<index>/value/<index>/content": 2
+            },
+            "patch_reconstruction": {
+              "operation_count": 16,
+              "patch_start_version": 1,
+              "patch_sync_version": 1,
+              "matches_patch_sync": true,
+              "attempted": true
+            },
+            "appended_step_types": [
+              "agent-inference"
+            ],
+            "tool_results": [],
+            "record_map_table_counts": {
+              "__version__": 0,
+              "thread": 1,
+              "thread_message": 3
+            },
+            "initial_step_types": [
+              "agent-turn-full-record-map"
+            ],
+            "final_step_types": [
+              "agent-turn-full-record-map",
+              "agent-inference"
+            ],
+            "terminal_patch_sync_present": true,
+            "final_inference_present": true,
+            "terminal_usage_present": true,
+            "final_inference": {
+              "model": "agave-flan",
+              "inputTokens": 34685,
+              "outputTokens": 7,
+              "cachedTokensRead": 29580,
+              "cachedTokensCreated": 28949,
+              "serverTimeToSubmitLlmMs": 71.20396500080824,
+              "serverTimeToFirstTokenMs": 1980.792063999921,
+              "serverPostSubmitTimeToFirstTokenMs": 1909.5880989991128,
+              "maxContextTokens": 200000,
+              "maxInputTokens": 160000,
+              "response_characters": 7,
+              "modelFailover": null
+            },
+            "application_error": null
+          }
+        },
+        {
+          "entry_index": 2,
+          "outcome": "application_error",
+          "duplicate_of": null,
+          "transport": {
+            "method": "POST",
+            "path": "/api/v3/runInferenceTranscript",
+            "request_mime": "application/json",
+            "status": 200,
+            "response_mime": "application/x-ndjson",
+            "har_time_ms": 454
+          },
+          "request": {
+            "asPatchResponse": true,
+            "patchResponseVersion": 2,
+            "createThread": false,
+            "generateTitle": false,
+            "isPartialTranscript": true,
+            "saveAllThreadOperations": true,
+            "setUnreadState": true,
+            "createdSource": "ai_module",
+            "threadType": "workflow",
+            "transcript_steps": [
+              {
+                "type": "config",
+                "config": {
+                  "type": "workflow",
+                  "model": "agave-flan",
+                  "useWebSearch": true,
+                  "searchScopes": [
+                    "everything"
+                  ],
+                  "availableConnectors": [
+                    "notion-calendar"
+                  ]
+                }
+              },
+              {
+                "type": "context",
+                "context_fields": [
+                  "currentDatetime",
+                  "spaceId",
+                  "spaceName",
+                  "spaceViewId",
+                  "surface",
+                  "timezone",
+                  "userEmail",
+                  "userId",
+                  "userName"
+                ]
+              },
+              {
+                "type": "context",
+                "context_fields": [
+                  "currentDatetime",
+                  "spaceId",
+                  "spaceName",
+                  "spaceViewId",
+                  "surface",
+                  "timezone",
+                  "userEmail",
+                  "userId",
+                  "userName"
+                ]
+              },
+              {
+                "type": "user",
+                "message_characters": 89
+              }
+            ]
+          },
+          "request_leaf_schema": [
+            {
+              "path": "asPatchResponse",
+              "type": "boolean"
+            },
+            {
+              "path": "createThread",
+              "type": "boolean"
+            },
+            {
+              "path": "createdSource",
+              "type": "string"
+            },
+            {
+              "path": "debugOverrides.contextManagementConfiguration.compactThreshold",
+              "type": "number"
+            },
+            {
+              "path": "debugOverrides.contextManagementConfiguration.createSummaryThreshold",
+              "type": "number"
+            },
+            {
+              "path": "debugOverrides.contextManagementConfiguration.recentSearchToolResultsToKeep",
+              "type": "number"
+            },
+            {
+              "path": "debugOverrides.contextManagementConfiguration.updateSummaryInterval",
+              "type": "number"
+            },
+            {
+              "path": "debugOverrides.emitAgentSearchExtractedResults",
+              "type": "boolean"
+            },
+            {
+              "path": "debugOverrides.emitDebugErrors",
+              "type": "boolean"
+            },
+            {
+              "path": "debugOverrides.emitFullAgentSteps",
+              "type": "boolean"
+            },
+            {
+              "path": "debugOverrides.emitInferences",
+              "type": "boolean"
+            },
+            {
+              "path": "generateTitle",
+              "type": "boolean"
+            },
+            {
+              "path": "isPartialTranscript",
+              "type": "boolean"
+            },
+            {
+              "path": "isSpaceSalesAssisted",
+              "type": "boolean"
+            },
+            {
+              "path": "isUserInAnySalesAssistedSpace",
+              "type": "boolean"
+            },
+            {
+              "path": "patchResponseVersion",
+              "type": "number"
+            },
+            {
+              "path": "saveAllThreadOperations",
+              "type": "boolean"
+            },
+            {
+              "path": "setUnreadState",
+              "type": "boolean"
+            },
+            {
+              "path": "spaceId",
+              "type": "string"
+            },
+            {
+              "path": "supportsCustomAgentNudgeTranscriptStep",
+              "type": "boolean"
+            },
+            {
+              "path": "threadId",
+              "type": "string"
+            },
+            {
+              "path": "threadType",
+              "type": "string"
+            },
+            {
+              "path": "traceId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].createdAt",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].id",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].userId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.[].[]",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.availableConnectors.[]",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.currentDatetime",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.databaseAgentConfigMode",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentAskSurvey",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentAutomations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentCardCustomization",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentDiffs",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentGenerateImage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentIntegrations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentSkillsV2",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentSupportPropertyReorder",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentThreadTools",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableComputer",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCrdtOperations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCsvAttachmentSupport",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCustomAgentCreateGuidanceV2",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCustomAgents",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableExperimentalIntegrations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableLargeToolResultComputerOffload",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailAgentMultiProviderSupport",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailExplicitToolCalls",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailNotificationPreferences",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMarkdownVNext",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableNotionMailDeprecated",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableQueryCalendar",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableQueryMail",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentAdvanced",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGoogleDriveInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGoogleDriveOAuthInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGtm",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentMcpServers",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentSearchConnectorsInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentSlack",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSkillsInCustomAgents",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSoftwareFactoryPage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSuggestedEditsTools",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSystemPromptAsPage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableUpdatePageOrderUpdates",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableUserSessionContext",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableWebResearch",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.internetAccess",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isAgentResearchRequest",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgentBuilder",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgentCreate",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isHipaa",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isMobile",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isOnboardingAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.manageWorkers",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.model",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.modelFromUser",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.reasoningEffort",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.searchScopes.[].type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.showDatabaseAgentsDiscoverability",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.spaceId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.spaceName",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.spaceViewId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.surface",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.timezone",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.updatePageStaleViewGuardEnabled",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useContextualCoreDocsAutoLoad",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useCustomAgentDraft",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useDocPreviewsForCoreAutoLoad",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useReadOnlyMode",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useRulePrioritization",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useWebSearch",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.userEmail",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.userId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.userName",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.writerMode",
+              "type": "boolean"
+            }
+          ],
+          "stream": {
+            "line_count": 2,
+            "line_types_in_order": [
+              "patch-start",
+              "record-map"
+            ],
+            "line_type_counts": {
+              "patch-start": 1,
+              "record-map": 1
+            },
+            "patch_op_counts": {},
+            "patch_paths": {},
+            "patch_reconstruction": {
+              "attempted": false,
+              "reason": "application_error_without_patch_sync",
+              "patch_start_count": 1,
+              "patch_sync_count": 0
+            },
+            "appended_step_types": [],
+            "tool_results": [],
+            "record_map_table_counts": {
+              "__version__": 0,
+              "thread": 1,
+              "thread_message": 2
+            },
+            "initial_step_types": [
+              "premium-feature-unavailable"
+            ],
+            "final_step_types": [],
+            "terminal_patch_sync_present": false,
+            "final_inference_present": false,
+            "terminal_usage_present": false,
+            "final_inference": null,
+            "application_error": {
+              "step_types": [
+                "premium-feature-unavailable"
+              ],
+              "feature_availability_metadata_present": true
+            }
+          }
+        },
+        {
+          "entry_index": 3,
+          "outcome": "application_error",
+          "duplicate_of": null,
+          "transport": {
+            "method": "POST",
+            "path": "/api/v3/runInferenceTranscript",
+            "request_mime": "application/json",
+            "status": 200,
+            "response_mime": "application/x-ndjson",
+            "har_time_ms": 458
+          },
+          "request": {
+            "asPatchResponse": true,
+            "patchResponseVersion": 2,
+            "createThread": false,
+            "generateTitle": false,
+            "isPartialTranscript": true,
+            "saveAllThreadOperations": true,
+            "setUnreadState": true,
+            "createdSource": "ai_module",
+            "threadType": "workflow",
+            "transcript_steps": [
+              {
+                "type": "config",
+                "config": {
+                  "type": "workflow",
+                  "model": "agave-flan",
+                  "useWebSearch": true,
+                  "searchScopes": [
+                    "everything"
+                  ],
+                  "availableConnectors": [
+                    "notion-calendar"
+                  ]
+                }
+              },
+              {
+                "type": "context",
+                "context_fields": [
+                  "currentDatetime",
+                  "spaceId",
+                  "spaceName",
+                  "spaceViewId",
+                  "surface",
+                  "timezone",
+                  "userEmail",
+                  "userId",
+                  "userName"
+                ]
+              },
+              {
+                "type": "context",
+                "context_fields": [
+                  "currentDatetime",
+                  "spaceId",
+                  "spaceName",
+                  "spaceViewId",
+                  "surface",
+                  "timezone",
+                  "userEmail",
+                  "userId",
+                  "userName"
+                ]
+              },
+              {
+                "type": "updated-config",
+                "updated_config": {
+                  "model": null,
+                  "modelFromUser": false,
+                  "reasoningEffort": null
+                }
+              },
+              {
+                "type": "user",
+                "message_characters": 102
+              }
+            ]
+          },
+          "request_leaf_schema": [
+            {
+              "path": "asPatchResponse",
+              "type": "boolean"
+            },
+            {
+              "path": "createThread",
+              "type": "boolean"
+            },
+            {
+              "path": "createdSource",
+              "type": "string"
+            },
+            {
+              "path": "debugOverrides.contextManagementConfiguration.compactThreshold",
+              "type": "number"
+            },
+            {
+              "path": "debugOverrides.contextManagementConfiguration.createSummaryThreshold",
+              "type": "number"
+            },
+            {
+              "path": "debugOverrides.contextManagementConfiguration.recentSearchToolResultsToKeep",
+              "type": "number"
+            },
+            {
+              "path": "debugOverrides.contextManagementConfiguration.updateSummaryInterval",
+              "type": "number"
+            },
+            {
+              "path": "debugOverrides.emitAgentSearchExtractedResults",
+              "type": "boolean"
+            },
+            {
+              "path": "debugOverrides.emitDebugErrors",
+              "type": "boolean"
+            },
+            {
+              "path": "debugOverrides.emitFullAgentSteps",
+              "type": "boolean"
+            },
+            {
+              "path": "debugOverrides.emitInferences",
+              "type": "boolean"
+            },
+            {
+              "path": "generateTitle",
+              "type": "boolean"
+            },
+            {
+              "path": "isPartialTranscript",
+              "type": "boolean"
+            },
+            {
+              "path": "isSpaceSalesAssisted",
+              "type": "boolean"
+            },
+            {
+              "path": "isUserInAnySalesAssistedSpace",
+              "type": "boolean"
+            },
+            {
+              "path": "patchResponseVersion",
+              "type": "number"
+            },
+            {
+              "path": "saveAllThreadOperations",
+              "type": "boolean"
+            },
+            {
+              "path": "setUnreadState",
+              "type": "boolean"
+            },
+            {
+              "path": "spaceId",
+              "type": "string"
+            },
+            {
+              "path": "supportsCustomAgentNudgeTranscriptStep",
+              "type": "boolean"
+            },
+            {
+              "path": "threadId",
+              "type": "string"
+            },
+            {
+              "path": "threadType",
+              "type": "string"
+            },
+            {
+              "path": "traceId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].createdAt",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].id",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].userId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.[].[]",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.availableConnectors.[]",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.currentDatetime",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.databaseAgentConfigMode",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentAskSurvey",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentAutomations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentCardCustomization",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentDiffs",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentGenerateImage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentIntegrations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentSkillsV2",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentSupportPropertyReorder",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableAgentThreadTools",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableComputer",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCrdtOperations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCsvAttachmentSupport",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCustomAgentCreateGuidanceV2",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableCustomAgents",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableExperimentalIntegrations",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableLargeToolResultComputerOffload",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailAgentMultiProviderSupport",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailExplicitToolCalls",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMailNotificationPreferences",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableMarkdownVNext",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableNotionMailDeprecated",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableQueryCalendar",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableQueryMail",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentAdvanced",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGoogleDriveInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGoogleDriveOAuthInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentGtm",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentMcpServers",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentSearchConnectorsInCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableScriptAgentSlack",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSkillsInCustomAgents",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSoftwareFactoryPage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSuggestedEditsTools",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableSystemPromptAsPage",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableUpdatePageOrderUpdates",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableUserSessionContext",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.enableWebResearch",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.internetAccess",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isAgentResearchRequest",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgentBuilder",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isCustomAgentCreate",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isHipaa",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isMobile",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.isOnboardingAgent",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.manageWorkers",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.model",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.modelFromUser",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.reasoningEffort",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.searchScopes.[].type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.showDatabaseAgentsDiscoverability",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.spaceId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.spaceName",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.spaceViewId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.surface",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.timezone",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.type",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.updatePageStaleViewGuardEnabled",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useContextualCoreDocsAutoLoad",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useCustomAgentDraft",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useDocPreviewsForCoreAutoLoad",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useReadOnlyMode",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useRulePrioritization",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.useWebSearch",
+              "type": "boolean"
+            },
+            {
+              "path": "transcript.[].value.userEmail",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.userId",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.userName",
+              "type": "string"
+            },
+            {
+              "path": "transcript.[].value.writerMode",
+              "type": "boolean"
+            }
+          ],
+          "stream": {
+            "line_count": 2,
+            "line_types_in_order": [
+              "patch-start",
+              "record-map"
+            ],
+            "line_type_counts": {
+              "patch-start": 1,
+              "record-map": 1
+            },
+            "patch_op_counts": {},
+            "patch_paths": {},
+            "patch_reconstruction": {
+              "attempted": false,
+              "reason": "application_error_without_patch_sync",
+              "patch_start_count": 1,
+              "patch_sync_count": 0
+            },
+            "appended_step_types": [],
+            "tool_results": [],
+            "record_map_table_counts": {
+              "__version__": 0,
+              "thread": 1,
+              "thread_message": 2
+            },
+            "initial_step_types": [
+              "premium-feature-unavailable"
+            ],
+            "final_step_types": [],
+            "terminal_patch_sync_present": false,
+            "final_inference_present": false,
+            "terminal_usage_present": false,
+            "final_inference": null,
+            "application_error": {
+              "step_types": [
+                "premium-feature-unavailable"
+              ],
+              "feature_availability_metadata_present": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

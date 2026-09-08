@@ -1,0 +1,32 @@
+display_name,internal_alias,family,provider,display_group,disabled,reasoning_efforts,default_reasoning_effort,speed,intelligence,cost,workflow_model,workflow_beta,custom_agent_model,agent_service_model
+Fable 5,acai-budino-high,anthropic,anthropic,intelligent,True,low;medium;high;max,high,2,5,5,acai-budino-high,True,acai-budino-high,acai-budino-high
+Haiku 4.5,anthropic-haiku-4.5,anthropic,anthropic,fast,False,,,5,2,2,,,anthropic-haiku-4.5,anthropic-haiku-4.5
+Opus 4.6,avocado-froyo-medium,anthropic,anthropic,intelligent,False,medium,medium,2,5,5,,,avocado-froyo-medium,
+Opus 4.7,apricot-sorbet-high,anthropic,anthropic,intelligent,False,high,high,2,5,5,apricot-sorbet-high,True,apricot-sorbet-high,apricot-sorbet-high
+Opus 4.8,ambrosia-tart-high,anthropic,anthropic,intelligent,False,low;medium;high;max,high,2,5,5,ambrosia-tart-high,True,ambrosia-tart-high,ambrosia-tart-high
+Opus 5,agave-flan,anthropic,anthropic,intelligent,False,low;medium;high;max,medium,2,5,5,agave-flan,True,agave-flan,agave-flan
+Sonnet 4.6,almond-croissant-low,anthropic,anthropic,fast,False,low;medium;high;max,low,3,5,4,almond-croissant-low,True,almond-croissant-low,almond-croissant-low
+Sonnet 5,angel-cake-high,anthropic,anthropic,intelligent,False,none;low;medium;high,high,3,5,3,angel-cake-high,True,angel-cake-high,angel-cake-high
+DeepSeek V4 Flash,baseten-deepseek-v4-flash,mystery,deepseek,fast,False,none;minimal;low;medium;high;xhigh,high,5,4,1,baseten-deepseek-v4-flash,True,baseten-deepseek-v4-flash,baseten-deepseek-v4-flash
+DeepSeek V4 Pro,baseten-deepseek-v4-pro,mystery,deepseek,intelligent,False,none;minimal;low;medium;high;max;xhigh,high,3,5,4,baseten-deepseek-v4-pro,True,baseten-deepseek-v4-pro,baseten-deepseek-v4-pro
+Gemini 3 Flash,gingerbread,gemini,gemini,fast,False,,,5,2,2,,,gingerbread,
+Gemini 3.1 Pro,galette-medium-thinking,gemini,gemini,intelligent,False,low;medium,medium,,,,galette-medium-thinking,True,,galette-medium-thinking
+Gemini 3.5 Flash,vertex-gemini-3.5-flash,gemini,gemini,fast,False,low;medium;high,low,5,3,3,vertex-gemini-3.5-flash,True,vertex-gemini-3.5-flash,vertex-gemini-3.5-flash
+Gemini 3.6 Flash,vertex-gemini-3.6-flash,gemini,gemini,fast,False,minimal;low;medium;high,medium,5,3,3,vertex-gemini-3.6-flash,True,vertex-gemini-3.6-flash,vertex-gemini-3.6-flash
+Gemini 3.7 Flash,grapefruit-zeppole,gemini,gemini,fast,False,low;medium;high,medium,5,3,3,grapefruit-zeppole,True,grapefruit-zeppole,grapefruit-zeppole
+GLM 5.2,baseten-glm-5.2,mystery,glm,intelligent,False,none;high;max,high,3,5,3,baseten-glm-5.2,True,baseten-glm-5.2,baseten-glm-5.2
+Kimi K2.6,fireworks-kimi-k2.6,mystery,kimi,intelligent,False,,,5,4,2,fireworks-kimi-k2.6,True,,fireworks-kimi-k2.6
+Kimi K2.7 Code,fireworks-kimi-k2.7,mystery,kimi,intelligent,False,,,5,4,2,fireworks-kimi-k2.7,True,fireworks-kimi-k2.7,fireworks-kimi-k2.7
+Kimi K3,fireworks-kimi-k3,mystery,kimi,intelligent,False,low;high;max,max,3,4,5,fireworks-kimi-k3,True,fireworks-kimi-k3,fireworks-kimi-k3
+GPT-5.2,oatmeal-cookie,openai,openai,fast,False,medium;high,medium,4,4,3,oatmeal-cookie,True,oatmeal-cookie,oatmeal-cookie
+GPT-5.4,oval-kumquat-medium,openai,openai,fast,False,medium;high,medium,4,5,4,oval-kumquat-medium,True,oval-kumquat-medium,oval-kumquat-medium
+GPT-5.4 Mini,oregon-grape-medium,openai,openai,fast,False,medium,medium,5,2,2,,,oregon-grape-medium,
+GPT-5.4 Nano,otaheite-apple-medium,openai,openai,fast,False,medium,medium,5,1,1,,,otaheite-apple-medium,
+GPT-5.5,opal-quince-medium,openai,openai,intelligent,False,medium;high,medium,4,5,5,opal-quince-medium,True,opal-quince-medium,opal-quince-medium
+GPT-5.6 Luna,olive-jellyroll,openai,openai,fast,False,none;low;medium;high;xhigh;max,medium,5,3,2,olive-jellyroll,True,olive-jellyroll,olive-jellyroll
+GPT-5.6 Sol,orange-mousse,openai,openai,intelligent,False,none;low;medium;high;xhigh;max,medium,3,5,5,orange-mousse,True,orange-mousse,orange-mousse
+GPT-5.6 Terra,orchid-muffin,openai,openai,intelligent,False,none;low;medium;high;xhigh;max,medium,4,4,4,orchid-muffin,True,orchid-muffin,orchid-muffin
+Grok 4.3,xigua-mochi-medium,xai,xai,intelligent,False,low;medium;high,medium,3,5,4,xigua-mochi-medium,True,xigua-mochi-medium,
+Grok 4.5,strawberry-whoopiepie,xai,xai,intelligent,False,low;medium;high,medium,3,5,4,strawberry-whoopiepie,True,strawberry-whoopiepie,
+Grok 4.6,soursop-shortcake,xai,xai,intelligent,False,low;medium;high;xhigh,high,3,5,4,soursop-shortcake,True,soursop-shortcake,soursop-shortcake
+Grok Build 0.1,xinomavro-cake,xai,xai,intelligent,False,,,3,5,4,xinomavro-cake,True,xinomavro-cake,

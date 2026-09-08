@@ -1,0 +1,20 @@
+/target
+**/*.rs.bk
+web/node_modules
+web/dist
+*.sqlite
+*.sqlite-*
+.DS_Store
+
+# Reverse-engineering archive: raw HARs and live-capture JSON contain real, live
+# session cookies (token_v2). Never commit this — sanitized copies live alongside
+# the raw ones and are the only artifacts safe to check in.
+/reference/har/*.har
+!/reference/har/*.sanitized.har
+/reference/captures/raw/
+/reference/desktop-decompile/downloads/
+/reference/desktop-decompile/app-raw/
+/reference/desktop-decompile/app-extracted/
+/reference/assets/browser-code/
+/reference/desktop-decompile/pretty/
+/reference/desktop-decompile/web-runtime-pretty/

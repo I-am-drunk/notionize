@@ -1,0 +1,236 @@
+{
+  "generated_at": "2026-08-26T22:00:40-04:00",
+  "scope": "High-confidence static findings from deduplicated app.notion.com JavaScript bodies recovered from baseline-full.har",
+  "confidence_rule": "Included only when an AI-specific API event, typed transcript discriminator, explicit configuration field, or direct call path is present. Generic model/agent/search word matches are excluded.",
+  "api_events": [
+    {
+      "event": "runInferenceTranscript",
+      "client_method": "callStreamApi",
+      "role": "Core transcript inference stream",
+      "source": "assets/browser-code/files/ActionBarUI-3af4c749ef60c361.a6a2c3747583f6d8.js",
+      "module": 855225
+    },
+    {
+      "event": "getAvailableModels",
+      "client_method": "callCellCompatibleApi",
+      "role": "Fetch model-picker entries and policy/BYOK metadata",
+      "source": "assets/browser-code/files/60333-bc67a033edf205c5.ada6132e2ad5ead7.js",
+      "module": 95496
+    },
+    {
+      "event": "getAIUsageEligibilityV2",
+      "client_method": "callCellCompatibleApi",
+      "role": "Fetch AI usage eligibility",
+      "source": "assets/browser-code/files/78277-2727f00b9140abff.37551afeda078938.js",
+      "module": 364881
+    },
+    {
+      "event": "getCustomAgents",
+      "client_method": "callApi",
+      "role": "List/search custom agents with recent transcripts and activity scores",
+      "source": "assets/browser-code/files/25188-b8cf623334b2f3c4.8bf92799d115288f.js",
+      "module": 558196
+    },
+    {
+      "event": "search",
+      "client_method": "callApi",
+      "role": "Supporting custom-agent lookup constrained to blockTypes=[agent] and source=agent_search",
+      "source": "assets/browser-code/files/25188-b8cf623334b2f3c4.8bf92799d115288f.js",
+      "module": 558196
+    },
+    {
+      "event": "listAIConnectors",
+      "client_method": "callApi",
+      "role": "Load connector availability and connection state",
+      "source": "assets/browser-code/files/ActionBarUI-3af4c749ef60c361.a6a2c3747583f6d8.js",
+      "module": 884662
+    },
+    {
+      "event": "getAIConnectorAuthorizationUrl",
+      "client_method": "callApi",
+      "role": "Start user/workspace connector authorization",
+      "source": "assets/browser-code/files/86452-dfcd138348ecf9c3.c78684db7de37358.js",
+      "module": 919122
+    },
+    {
+      "event": "disconnectAiConnector",
+      "client_method": "callApi",
+      "role": "Disconnect generic or personal connector authorization",
+      "source": "assets/browser-code/files/86452-dfcd138348ecf9c3.c78684db7de37358.js",
+      "module": 919122
+    },
+    {
+      "event": "disconnectGoogleDriveAIIngestion",
+      "client_method": "callApi",
+      "role": "Disconnect Google Drive ingestion",
+      "source": "assets/browser-code/files/86452-dfcd138348ecf9c3.c78684db7de37358.js",
+      "module": 919122
+    },
+    {
+      "event": "getJiraAIConnectionStatus",
+      "client_method": "callCellCompatibleApi",
+      "role": "Read Jira AI connection state",
+      "source": "assets/browser-code/files/86452-dfcd138348ecf9c3.c78684db7de37358.js",
+      "module": 919122
+    },
+    {
+      "event": "addNotionInfoForJiraAIConnection",
+      "client_method": "callApi",
+      "role": "Complete Jira connector setup",
+      "source": "assets/browser-code/files/86452-dfcd138348ecf9c3.c78684db7de37358.js",
+      "module": 919122
+    },
+    {
+      "event": "disconnectJiraConnector",
+      "client_method": "callApi",
+      "role": "Disconnect Jira connector",
+      "source": "assets/browser-code/files/86452-dfcd138348ecf9c3.c78684db7de37358.js",
+      "module": 919122
+    },
+    {
+      "event": "getSyncControlsForJiraConnector",
+      "client_method": "callApi",
+      "role": "Read Jira connector synchronization controls",
+      "source": "assets/browser-code/files/86452-dfcd138348ecf9c3.c78684db7de37358.js",
+      "module": 919122
+    },
+    {
+      "event": "generateAiImage",
+      "client_method": "callCellCompatibleApi",
+      "role": "Generate an image after optional inference-based prompt enhancement",
+      "source": "assets/browser-code/files/ActionBarUI-3af4c749ef60c361.a6a2c3747583f6d8.js",
+      "module": 705912
+    },
+    {
+      "event": "saveAiImageFeedback",
+      "client_method": "callCellCompatibleApi",
+      "role": "Persist image-generation feedback",
+      "source": "assets/browser-code/files/ActionBarUI-3af4c749ef60c361.a6a2c3747583f6d8.js",
+      "module": 705912
+    },
+    {
+      "event": "generateAiBlockTask",
+      "client_method": "callCellCompatibleApi",
+      "role": "Enqueue AI-block generation after template instantiation",
+      "source": "assets/browser-code/files/50312-aab94959222c686a.5d1368033a4c4387.js",
+      "module": 766469
+    }
+  ],
+  "transcript_modes": [
+    {"type": "search", "defaults": {"scopeForNextSearch": "everything", "useWebSearch": false}},
+    {"type": "researcher", "defaults": {"searchScope": "everything", "useWebSearch": true}},
+    {"type": "workflow"},
+    {"type": "markdown-chat", "defaults": {"model": "openai-gpt-4.1"}},
+    {
+      "type": "council-chat",
+      "members": [
+        {"model": "apricot-sorbet-high", "displayName": "Claude Opus 4.7", "modelFamily": "anthropic"},
+        {"model": "opal-quince-medium", "displayName": "GPT-5.5", "modelFamily": "openai"}
+      ]
+    }
+  ],
+  "stream_handlers": [
+    {
+      "layer": "HTTP transport",
+      "behavior": "callStreamApi builds an HTTP request with format=jsonStream and returns an async iterable",
+      "source": "assets/browser-code/files/UISpacePermissionGroupToken-a6f003d515dc4de3.2fac3ab60f8d809c.js",
+      "module": 53770
+    },
+    {
+      "layer": "Inference wrapper",
+      "behavior": "Passes abortSignal and space routing headers; converts error frames; invokes onResponse for every streamed frame; collects frames",
+      "source": "assets/browser-code/files/ActionBarUI-3af4c749ef60c361.a6a2c3747583f6d8.js",
+      "module": 855225
+    },
+    {
+      "layer": "Logical transcript reducer",
+      "behavior": "Replaces keyed inference/tool/config steps; concatenates chat/report text; merges researcher state; groups registered tool call/output/error records by toolCallId",
+      "source": "assets/browser-code/files/92549-5e2927c3bb373299.d40f9b206d0e7460.js",
+      "module": 286564
+    }
+  ],
+  "model_and_reasoning": [
+    {
+      "finding": "Workflow config carries model, reasoningEffort, and modelFromUser; writer mode suppresses user model selection and chooses a configured writer default",
+      "source": "assets/browser-code/files/45443-732b18bf23518efa.80675f7adb837ca4.js",
+      "module": 740047
+    },
+    {
+      "finding": "updated-config is merged over the latest workflow config; personal auto-routing model and reasoning effort can be inherited from fallback config",
+      "source": "assets/browser-code/files/92549-5e2927c3bb373299.d40f9b206d0e7460.js",
+      "module": 1978
+    },
+    {
+      "finding": "Available-model entries expose disabled state, model message, family, provider, workflow/agent-service/custom-agent applicability, restricted-access policy, geo policy, and BYOK enrolled providers",
+      "source": "assets/browser-code/files/60333-bc67a033edf205c5.ada6132e2ad5ead7.js",
+      "module": 95496
+    },
+    {
+      "finding": "Several setup experiences target model orange-mousse with reasoningEffort=high",
+      "source": "assets/browser-code/files/app-336b936d762cd279.4e905c19dea9370f.js",
+      "module": 721734
+    },
+    {
+      "finding": "AI image prompt enhancement requests model oatmeal-cookie before generateAiImage",
+      "source": "assets/browser-code/files/ActionBarUI-3af4c749ef60c361.a6a2c3747583f6d8.js",
+      "module": 705912
+    }
+  ],
+  "attachment_policy": {
+    "max_bytes": 20971520,
+    "direct_types": [
+      "application/pdf", "text/csv", "image/png", "image/jpeg", "image/gif", "image/webp", "image/heic",
+      "text/plain", "text/markdown", "text/html", "text/xml", "text/css", "text/yaml",
+      "text/x-python", "text/x-ruby", "text/x-go", "text/x-rust", "text/x-java-source",
+      "text/x-c", "text/x-c++src", "text/x-shellscript", "application/javascript",
+      "application/typescript", "application/json"
+    ],
+    "transcript_step_types": ["attachment", "computer-file"],
+    "notes": [
+      "PDF records may include base64EncodedFileUrl; CSV/image/text records use original file URLs and permission metadata.",
+      "Uploaded attachment metadata carries attachmentSource and a guardrail object; missing guardrail state defaults to attachmentRisk=skipped.",
+      "HEIC acceptance is conditional on an enableHeicSupport option."
+    ],
+    "source": "assets/browser-code/files/9533-9707c13cb391790a.ae477bcebfa165c6.js",
+    "modules": [36268, 812709]
+  },
+  "search_and_tools": {
+    "connector_scopes": [
+      "notion", "web", "helpdocs", "slack", "github", "jira", "linear", "salesforce", "asana", "box",
+      "confluence", "notion-mail", "notion-calendar", "gmail", "outlook", "google-calendar", "google-drive",
+      "microsoft-teams", "sharepoint"
+    ],
+    "tool_step_types": [
+      "agent-tool-result", "registered-tool-call", "registered-tool-output", "registered-tool-error",
+      "registered-tool-grouping", "workflow-effect-calling", "workflow-effect-called", "workflow-effect-error"
+    ],
+    "workflow_capabilities": [
+      "automations", "integrations", "script-agent", "advanced-script-agent", "run-script-only",
+      "Slack tools", "MCP servers", "computer", "image generation", "calendar query", "mail query",
+      "web research", "CRDT operations", "suggested edits"
+    ],
+    "sources": [
+      "assets/browser-code/files/45443-732b18bf23518efa.80675f7adb837ca4.js",
+      "assets/browser-code/files/90948-625efbb840b65e44.a6d282692ac75719.js",
+      "assets/browser-code/files/92549-5e2927c3bb373299.d40f9b206d0e7460.js",
+      "assets/browser-code/files/86452-dfcd138348ecf9c3.c78684db7de37358.js"
+    ]
+  },
+  "cancellation": {
+    "action_label": "inferenceTranscriptActions.handleAbort",
+    "transport_behavior": "abortSignal is passed to callStreamApi; an aborted failed transport is normalized to error message Aborted with code 0",
+    "sources": [
+      "assets/browser-code/files/9533-9707c13cb391790a.ae477bcebfa165c6.js",
+      "assets/browser-code/files/ActionBarUI-3af4c749ef60c361.a6a2c3747583f6d8.js"
+    ]
+  },
+  "static_boundary": {
+    "literal_patch_frame_handlers_found": false,
+    "explanation": "No literal patch-start or patch-sync strings occur in the recovered JS bodies. The loaded wrapper forwards frames to onResponse, but the main chat callback/patch action implementation is not present in this baseline asset set.",
+    "not_claimed": [
+      "Event names other than runInferenceTranscript are not asserted to be literal URL paths without runtime confirmation.",
+      "Feature flags indicate client capability wiring, not guaranteed availability for every workspace.",
+      "Model codenames are observed constants, not stable public-name mappings unless an adjacent display name is explicit."
+    ]
+  }
+}

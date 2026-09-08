@@ -1,0 +1,56 @@
+{
+  "audit_version": 1,
+  "raw_capture": "notionize-live-2026-08-27T03-50-19.759Z.json",
+  "sanitized_artifact": "notionize-live-2026-08-27T03-50-19.759Z.schema.json",
+  "sanitized_artifact_sha256": "901f7b7e0cb87abb62fd5d226a524f1c98dc9e263b240d51bb0e8831de9a5ef9",
+  "transaction_count": 4,
+  "outcome_counts": {
+    "application-level-quota-failure": 2,
+    "success": 2
+  },
+  "framing_counts": {
+    "application/x-ndjson": 4
+  },
+  "exact_marker_presence": {
+    "activate-transcript-compaction": false,
+    "agent-transcript-summary": false,
+    "error": false,
+    "premium-feature-unavailable": true,
+    "summarize-transcript": false,
+    "summarize-transcript-error": false,
+    "summary-inference": false
+  },
+  "privacy_pattern_hits": {
+    "absolute_user_path": 0,
+    "url": 0,
+    "uuid": 0,
+    "compact_identifier": 0,
+    "email": 0,
+    "jwt": 0,
+    "bearer_value": 0,
+    "notion_token": 0,
+    "serialized_cookie": 0
+  },
+  "privacy_counters": {
+    "unexpected_string_value_count": 0,
+    "forbidden_serialized_key_count": 0,
+    "unknown_structural_enum_count": 0
+  },
+  "structural_assertions": {
+    "raw_is_regular_non_symlink_file": true,
+    "raw_capture_mode_0600": true,
+    "sanitized_artifact_mode_0644": true,
+    "source_byte_count_matches": true,
+    "source_digest_matches": true,
+    "capture_event_count_matches": true,
+    "target_transaction_count_matches": true,
+    "deterministic_regeneration_matches": true,
+    "all_capture_integrity_checks_pass": true,
+    "all_ndjson_lines_parsed": true,
+    "no_unknown_structural_enums": true,
+    "no_forbidden_serialized_keys": true,
+    "all_string_values_path_allowlisted": true,
+    "no_arbitrary_model_aliases": true
+  },
+  "passed": true
+}

@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-08-27T04:52:58.927004+00:00",
+  "raw_capture_files": 6,
+  "entry_observations": 1190,
+  "unique_method_endpoints": 418,
+  "unique_hosts": 23,
+  "host_counts": {
+    "app.notion.com": 818,
+    "msgstore-002.app.notion.com": 85,
+    "http-inputs-notion.splunkcloud.com": 74,
+    "r.stripe.com": 44,
+    "consumer.cloud.gist.build": 42,
+    "js.stripe.com": 26,
+    "exp.notion.com": 22,
+    "indify.co": 19,
+    "<non-network>": 13,
+    "o324374.ingest.sentry.io": 9,
+    "img.notionusercontent.com": 8,
+    "newassets.hcaptcha.com": 6,
+    "api.hcaptcha.com": 6,
+    "m.stripe.com": 4,
+    "api.stripe.com": 3,
+    "b.stripecdn.com": 3,
+    "m.stripe.network": 2,
+    "127.0.0.1": 1,
+    "merchant-ui-api.stripe.com": 1,
+    "hcaptcha.com": 1,
+    "9f123fc51cf7.w.hcaptcha.com": 1,
+    "325a26b70cd4.w.hcaptcha.com": 1,
+    "ef07653c3448.w.hcaptcha.com": 1
+  },
+  "ai_endpoint_counts": {
+    "correlated": 5,
+    "direct": 6,
+    "support": 2
+  }
+}
